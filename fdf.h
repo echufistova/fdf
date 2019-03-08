@@ -20,11 +20,25 @@ typedef struct s_coord
     int x;
     int y;
     int z;
+    int color;
 
 }               t_coord;
+
+typedef struct s_list_coord
+{
+    int x;
+    int y;
+    int z;
+    int color;
+    struct s_list_coord *next;
+    struct s_list_coord *prev;
+
+}               t_list_coord;
 
 typedef struct s_map
 {
     t_point     map_size;
+    t_list_coord      *list_coord;
+    t_coord     *coords;
 }               t_map;
 #endif //FDF_FDF_H

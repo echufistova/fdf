@@ -91,4 +91,4 @@ add_executable(fdf
         libft/get_next_line.c
         libft/get_next_line.h
         libft/libft.h
-        main.c fdf.h)
+        main.c fdf.h ft_list_coord.c)
