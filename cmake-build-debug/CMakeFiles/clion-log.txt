@@ -1,4 +1,4 @@
-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/ychufist/CLionProjects/fdf
+/home/echufy/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5153.40/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/echufy/fdf
 -- Configuring done
 -- Generating done
--- Build files have been written to: /Users/ychufist/CLionProjects/fdf/cmake-build-debug
+-- Build files have been written to: /home/echufy/fdf/cmake-build-debug
