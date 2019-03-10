@@ -8,17 +8,20 @@ void get_line_fdf(t_map *map, char *line, int row)
     char **split;
     t_list_coord *dop;
 
-    ij.x = -1;
+    ij.x = 1;
     split = ft_strsplit(line, ' ');
     dop = map->list_coord;
-    while (split[++ij.x] != '\0')
+    map->list_coord->x = 0;
+    map->list_coord->y = row;
+    map->list_coord->z = ft_atoi(split[0]); // ДОБАВИТЬ ЦВЕТ
+    while (split[ij.x])
     {
         map->list_coord->next = ft_list_coord_new(ij.x, row, split[ij.x]);
         map->list_coord = map->list_coord->next;
+        ij.x++;
     }
     map->list_coord->flag_eo_line = 1;
     print_list_coord(dop);
-//    ft_printf("\n\n");
 }
 
 void init(t_map *map)
@@ -35,12 +38,14 @@ void make_coords(t_map *map)
     t_list_coord *dop;
 
     ij.y = -1;
+    ft_printf("nap size y : %d ", map->size.y);
+    ft_printf("nap size x : %d\n", map->size.x);
     dop = map->begin;
     map->coords = (t_coord**)malloc(sizeof(t_coord*) * map->size.y);
     while (++ij.y < map->list_coord->y)
     {
-        ij.x = -1;
-        map->coords[++ij.x] = (t_coord*)malloc(sizeof(t_coord) * map->size.x);
+        ij.x = 0;
+        map->coords[ij.y] = (t_coord*)malloc(sizeof(t_coord) * map->size.x);
         while (dop->flag_eo_line != 1)
         {
             map->coords[ij.y][ij.x].x = dop->x;
@@ -49,7 +54,9 @@ void make_coords(t_map *map)
             map->coords[ij.y][ij.x].color = dop->color;
             dop = dop->next;
             ft_printf("%4d", map->coords[ij.y][ij.x].z);
+            ij.x++;
         }
+        dop = dop->next;
         ft_printf("   h\n");
     }
 }
@@ -77,10 +84,11 @@ int main(int ac, char **av)
         get_line_fdf(&map, line, row++);
         ft_strdel(&line);
     }
-    map.size.x = len;
+    ft_printf("\n");
+    map.size.x = map.list_coord->x + 1;
     map.size.y = row;
 //    if (valid_map(map))
-//        make_coords(&map);
+        make_coords(&map);
     printf("Hello, World!\n");
     return 0;
 }
