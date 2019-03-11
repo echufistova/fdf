@@ -6,8 +6,7 @@
 
 t_list_coord	*ft_list_coord_new(int x, int y, char *line)
 {
-    int i;
-    char *dop;
+    // char *dop;
     t_list_coord *res;
 
     if (!(res = (t_list_coord*)malloc(sizeof(t_list_coord))))

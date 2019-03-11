@@ -8,6 +8,7 @@
 #include "libft/libft.h"
 #include "libft/get_next_line.h"
 #include "libft/ft_printf.h"
+# include "minilibx/mlx.h"
 
 typedef struct s_point
 {
@@ -42,6 +43,13 @@ typedef struct s_map
     t_list_coord        *list_coord;
     t_list_coord        *begin;
     t_coord             **coords;
+    void                *mlx;
+    void                *window;
+    void *img;
+    int *image;
+    int endian;
+    int bpp;
+    int size_line;
 }               t_map;
 
 void print_list_coord(t_list_coord *list);

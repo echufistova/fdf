@@ -30,6 +30,7 @@ void init(t_map *map)
     map->list_coord->y = 0;
     map->list_coord->z = 0; //ТУТ НЕ 0
     map->begin = map->list_coord;
+
 }
 
 void make_coords(t_map *map)
@@ -64,34 +65,57 @@ void make_coords(t_map *map)
     }
 }
 
-int main(int ac, char **av)
+int main(void)
 {
-    int fd;
-    int row;
-    int len;
-    char *line;
+//    int fd;
+//    int row;
+//    size_t len;
+//    char *line;
     t_map map;
-
-    row = 0;
-    fd = open(av[1], O_RDONLY);
-    init(&map);
-    while (get_next_line(fd, &line) > 0)
-    {
-        if (row == 0)
-            len = ft_strlen(line);
-        if (ft_strlen(line) > len)
+//
+//    row = 0;
+//    fd = open(av[1], O_RDONLY);
+//    init(&map);
+//    while (get_next_line(fd, &line) > 0)
+//    {
+//        if (row == 0)
+//            len = ft_strlen(line);
+//        if (ft_strlen(line) > len)
+//        {
+//            ft_strdel(&line);
+//            return (0);
+//        }
+//        get_line_fdf(&map, line, row++);
+//        ft_strdel(&line);
+//    }
+//    ft_printf("\n");
+//    map.size.x = map.list_coord->x + 1;
+//    map.size.y = row;
+    map.mlx = mlx_init();
+    map.window = mlx_new_window(map.mlx, 500, 500, "FDF");
+    map.endian = 0;
+    map.bpp = 32;
+    map.size_line = 500;
+    map.img = mlx_new_image(map.mlx, 500, 500);
+    map.image = (int *) mlx_get_data_addr(map.img, &map.bpp, &map.size_line, &map.endian);
+    int x, y;
+    x = 0;
+    y = 0;
+//    while (x < 500)
+//    {
+//        y = -1;
+        while (++y < 500 * 500)
         {
-            ft_strdel(&line);
-            return (0);
+            map.image[y] = 0x8fcbc4;
         }
-        get_line_fdf(&map, line, row++);
-        ft_strdel(&line);
-    }
-    ft_printf("\n");
-    map.size.x = map.list_coord->x + 1;
-    map.size.y = row;
+
+//        x++;
+//    }
+    mlx_put_image_to_window(map.mlx, map.window, map.img, 0, 0);
+    mlx_loop(map.mlx);
+
 //    if (valid_map(map))
-        make_coords(&map);
+//        make_coords(&map);
     printf("Hello, World!\n");
-    return 0;
+    return (0);
 }
