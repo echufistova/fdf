@@ -4,30 +4,31 @@
 
 void get_line_fdf(t_map *map, char *line, int row)
 {
-    t_point ij;
+    int i;
     char **split;
-    t_list_coord *dop;
 
-    ij.x = 1;
     split = ft_strsplit(line, ' ');
-    dop = map->list_coord;
-    map->list_coord->x = 0;
-    map->list_coord->y = row;
-    map->list_coord->z = ft_atoi(split[0]); // ДОБАВИТЬ ЦВЕТ
-    while (split[ij.x])
+    i = (row == 0) ? 1 : 0;
+    while (split[i])
     {
-        map->list_coord->next = ft_list_coord_new(ij.x, row, split[ij.x]);
+        map->list_coord->next = ft_list_coord_new(i, row, split[i]);
         map->list_coord = map->list_coord->next;
-        ij.x++;
+        ft_printf("%3d", map->list_coord->z);
+        i++;
     }
+    ft_printf(" %d", i);
+    ft_printf("\n");
+//    map->list_coord->z = ft_atoi(split[0]); // ТУТ ЕЩЕ НУЖНО ДОБАВИТЬ ЦВЕТ
     map->list_coord->flag_eo_line = 1;
-    print_list_coord(dop);
 }
 
 void init(t_map *map)
 {
     map->list_coord = (t_list_coord*)malloc(sizeof(t_list_coord));
     map->list_coord->next = NULL;
+    map->list_coord->x = 0;
+    map->list_coord->y = 0;
+    map->list_coord->z = 0; //ТУТ НЕ 0
     map->begin = map->list_coord;
 }
 
@@ -37,25 +38,27 @@ void make_coords(t_map *map)
     t_point ij;
     t_list_coord *dop;
 
-    ij.y = -1;
+    ij.y = 0;
     ft_printf("nap size y : %d ", map->size.y);
     ft_printf("nap size x : %d\n", map->size.x);
     dop = map->begin;
     map->coords = (t_coord**)malloc(sizeof(t_coord*) * map->size.y);
-    while (++ij.y < map->list_coord->y)
+    while (ij.y < map->size.y)
     {
         ij.x = 0;
         map->coords[ij.y] = (t_coord*)malloc(sizeof(t_coord) * map->size.x);
-        while (dop->flag_eo_line != 1)
+        while (ij.x < map->size.x)
         {
             map->coords[ij.y][ij.x].x = dop->x;
             map->coords[ij.y][ij.x].y = dop->y;
             map->coords[ij.y][ij.x].z = dop->z;
             map->coords[ij.y][ij.x].color = dop->color;
-            dop = dop->next;
-            ft_printf("%4d", map->coords[ij.y][ij.x].z);
+            if (dop->flag_eo_line != 1)
+                dop = dop->next;
+            ft_printf("%3d", map->coords[ij.y][ij.x].z);
             ij.x++;
         }
+        ij.y++;
         dop = dop->next;
         ft_printf("   h\n");
     }

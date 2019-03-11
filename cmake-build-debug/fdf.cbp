@@ -8,346 +8,350 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/echufy/fdf/cmake-build-debug"/>
+				<Option working_dir="/Users/ychufist/fdf/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/echufy/fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/echufy/fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/echufy/fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/echufy/fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/ychufist/fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/ychufist/fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/ychufist/fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/ychufist/fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/echufy/fdf/cmake-build-debug"/>
+				<Option working_dir="/Users/ychufist/fdf/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/echufy/fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/echufy/fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/echufy/fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/echufy/fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="fdf">
-				<Option output="/home/echufy/fdf/cmake-build-debug/fdf" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/echufy/fdf/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/home/echufy/fdf/libft"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/echufy/fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 fdf"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/echufy/fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/echufy/fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/echufy/fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="fdf/fast">
-				<Option output="/home/echufy/fdf/cmake-build-debug/fdf" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/echufy/fdf/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/home/echufy/fdf/libft"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/echufy/fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 fdf/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/echufy/fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/echufy/fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/echufy/fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/ychufist/fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/ychufist/fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/ychufist/fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/ychufist/fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/echufy/fdf/cmake-build-debug"/>
+				<Option working_dir="/Users/ychufist/fdf/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/echufy/fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/echufy/fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/echufy/fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/echufy/fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/ychufist/fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/ychufist/fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/ychufist/fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/ychufist/fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="fdf">
+				<Option output="/Users/ychufist/fdf/cmake-build-debug/fdf" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/ychufist/fdf/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/ychufist/fdf/."/>
+					<Add directory="/Users/ychufist/fdf/libft"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/ychufist/fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 fdf"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/ychufist/fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/ychufist/fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/ychufist/fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="fdf/fast">
+				<Option output="/Users/ychufist/fdf/cmake-build-debug/fdf" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/ychufist/fdf/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/ychufist/fdf/."/>
+					<Add directory="/Users/ychufist/fdf/libft"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/ychufist/fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 fdf/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/ychufist/fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/ychufist/fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/ychufist/fdf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/echufy/fdf/fdf.h">
+		<Unit filename="/Users/ychufist/fdf/fdf.h">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/ft_list_coord.c">
+		<Unit filename="/Users/ychufist/fdf/ft_list_coord.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_atoi.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_atoi.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_atoi_base.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_atoi_base.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_bzero.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_bzero.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_cl.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_cl.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_cw.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_cw.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_dopfile.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_dopfile.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_dopfile1.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_dopfile1.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_flags.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_flags.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_foreach.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_foreach.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_intlength.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_intlength.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_isalnum.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_isalnum.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_isalpha.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_isalpha.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_isascii.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_isascii.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_isdigit.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_isdigit.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_isprint.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_isprint.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_itoa.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_itoa.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_itoa_unsigned.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_itoa_unsigned.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_lstadd.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_lstadd.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_lstdel.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_lstdel.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_lstdelone.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_lstdelone.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_lstiter.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_lstiter.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_lstmap.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_lstmap.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_lstnew.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_lstnew.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_memalloc.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_memalloc.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_memccpy.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_memccpy.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_memchr.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_memchr.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_memcmp.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_memcmp.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_memcpy.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_memcpy.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_memdel.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_memdel.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_memmove.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_memmove.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_memset.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_memset.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_mmap.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_mmap.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_new_tout.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_new_tout.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_octflag.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_octflag.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_params.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_params.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_presflags.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_presflags.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_print_bigs.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_print_bigs.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_print_c.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_print_c.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_print_id.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_print_id.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_print_o.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_print_o.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_print_p.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_print_p.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_print_s.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_print_s.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_print_x_u.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_print_x_u.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_printf.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_printf.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_printf.h">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_printf.h">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_putchar.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_putchar.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_putchar_fd.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_putchar_fd.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_putendl.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_putendl.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_putendl_fd.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_putendl_fd.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_putnbr.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_putnbr.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_putnbr_fd.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_putnbr_fd.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_putstr.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_putstr.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_putstr_fd.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_putstr_fd.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_sqrt.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_sqrt.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_strcat.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_strcat.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_strchr.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_strchr.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_strclr.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_strclr.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_strcmp.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_strcmp.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_strcpy.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_strcpy.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_strdel.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_strdel.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_strdup.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_strdup.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_strequ.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_strequ.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_striter.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_striter.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_striteri.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_striteri.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_strjoin.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_strjoin.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_strlcat.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_strlcat.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_strlen.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_strlen.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_strmap.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_strmap.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_strmapi.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_strmapi.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_strncat.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_strncat.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_strncmp.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_strncmp.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_strncpy.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_strncpy.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_strnequ.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_strnequ.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_strnew.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_strnew.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_strnstr.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_strnstr.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_strrchr.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_strrchr.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_strsplit.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_strsplit.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_strstr.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_strstr.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_strsub.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_strsub.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_strtrim.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_strtrim.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_swap.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_swap.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_tolower.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_tolower.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/ft_toupper.c">
+		<Unit filename="/Users/ychufist/fdf/libft/ft_toupper.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/get_next_line.c">
+		<Unit filename="/Users/ychufist/fdf/libft/get_next_line.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/get_next_line.h">
+		<Unit filename="/Users/ychufist/fdf/libft/get_next_line.h">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/libft/libft.h">
+		<Unit filename="/Users/ychufist/fdf/libft/libft.h">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/main.c">
+		<Unit filename="/Users/ychufist/fdf/main.c">
 			<Option target="fdf"/>
 		</Unit>
-		<Unit filename="/home/echufy/fdf/CMakeLists.txt">
+		<Unit filename="/Users/ychufist/fdf/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

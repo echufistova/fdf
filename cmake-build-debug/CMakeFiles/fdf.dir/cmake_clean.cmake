@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/fdf.dir/libft/ft_atoi.c.o"
+  "CMakeFiles/fdf.dir/libft/ft_atoi_base.c.o"
   "CMakeFiles/fdf.dir/libft/ft_bzero.c.o"
   "CMakeFiles/fdf.dir/libft/ft_cl.c.o"
   "CMakeFiles/fdf.dir/libft/ft_cw.c.o"
@@ -81,9 +82,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/fdf.dir/libft/ft_tolower.c.o"
   "CMakeFiles/fdf.dir/libft/ft_toupper.c.o"
   "CMakeFiles/fdf.dir/libft/get_next_line.c.o"
-  "CMakeFiles/fdf.dir/main.c.o"
   "CMakeFiles/fdf.dir/ft_list_coord.c.o"
-  "CMakeFiles/fdf.dir/libft/ft_atoi_base.c.o"
+  "CMakeFiles/fdf.dir/main.c.o"
   "fdf.pdb"
   "fdf"
 )

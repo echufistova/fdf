@@ -3,10 +3,12 @@ project(fdf C)
 
 set(CMAKE_C_STANDARD 11)
 
+include_directories(.)
 include_directories(libft)
 
 add_executable(fdf
         libft/ft_atoi.c
+        libft/ft_atoi_base.c
         libft/ft_bzero.c
         libft/ft_cl.c
         libft/ft_cw.c
@@ -91,4 +93,6 @@ add_executable(fdf
         libft/get_next_line.c
         libft/get_next_line.h
         libft/libft.h
-        main.c fdf.h ft_list_coord.c libft/ft_atoi_base.c)
+        fdf.h
+        ft_list_coord.c
+        main.c)

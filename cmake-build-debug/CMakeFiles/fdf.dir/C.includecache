@@ -6,17 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/echufy/fdf/fdf.h
+/Users/ychufist/fdf/fdf.h
 libft/libft.h
-/home/echufy/fdf/libft/libft.h
+/Users/ychufist/fdf/libft/libft.h
 libft/get_next_line.h
-/home/echufy/fdf/libft/get_next_line.h
+/Users/ychufist/fdf/libft/get_next_line.h
 libft/ft_printf.h
-/home/echufy/fdf/libft/ft_printf.h
+/Users/ychufist/fdf/libft/ft_printf.h
 
-/home/echufy/fdf/libft/ft_printf.h
+/Users/ychufist/fdf/libft/ft_printf.h
 libft.h
-/home/echufy/fdf/libft/libft.h
+/Users/ychufist/fdf/libft/libft.h
 unistd.h
 -
 stdio.h
@@ -36,7 +36,7 @@ locale.h
 wchar.h
 -
 
-/home/echufy/fdf/libft/get_next_line.h
+/Users/ychufist/fdf/libft/get_next_line.h
 sys/types.h
 -
 sys/stat.h
@@ -52,7 +52,7 @@ unistd.h
 stdio.h
 -
 
-/home/echufy/fdf/libft/libft.h
+/Users/ychufist/fdf/libft/libft.h
 unistd.h
 -
 stdio.h
@@ -66,9 +66,9 @@ ctype.h
 stdint.h
 -
 
-/home/echufy/fdf/main.c
+/Users/ychufist/fdf/main.c
 stdio.h
 -
 fdf.h
-/home/echufy/fdf/fdf.h
+/Users/ychufist/fdf/fdf.h
 

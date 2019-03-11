@@ -20,6 +20,8 @@ t_list_coord	*ft_list_coord_new(int x, int y, char *line)
 //        dop = ft_strchr(line, ',');
 //        res->color = ft_atoi_base(++dop, "10");
 //    }
+    //else
+    res->color = 0;
     res->flag_eo_line = 0;
     res->next = NULL;
     return (res);
