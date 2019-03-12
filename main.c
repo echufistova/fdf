@@ -79,8 +79,8 @@ void make_coords(t_map *map)
         map->coords[ij.y] = (t_coord*)malloc(sizeof(t_coord) * map->size.x);
         while (ij.x < map->size.x)
         {
-            map->coords[ij.y][ij.x].x = dop->x * 20 + xy.x;
-            map->coords[ij.y][ij.x].y = dop->y * 20 + xy.y;
+            map->coords[ij.y][ij.x].x = (dop->x + xy.x) * 20;
+            map->coords[ij.y][ij.x].y = (dop->y + xy.x) * 20;
             map->coords[ij.y][ij.x].z = dop->z * 20;
             map->coords[ij.y][ij.x].color = dop->color;
             if (dop->flag_eo_line != 1)
