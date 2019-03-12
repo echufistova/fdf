@@ -7,6 +7,7 @@ CMakeFiles/fdf.dir/ft_list_coord.c.o
  /Users/ychufist/fdf/libft/ft_printf.h
  /Users/ychufist/fdf/libft/get_next_line.h
  /Users/ychufist/fdf/libft/libft.h
+ /Users/ychufist/fdf/minilibx/mlx.h
 CMakeFiles/fdf.dir/libft/ft_atoi.c.o
  /Users/ychufist/fdf/libft/ft_atoi.c
  /Users/ychufist/fdf/libft/libft.h
@@ -277,3 +278,4 @@ CMakeFiles/fdf.dir/main.c.o
  /Users/ychufist/fdf/libft/get_next_line.h
  /Users/ychufist/fdf/libft/libft.h
  /Users/ychufist/fdf/main.c
+ /Users/ychufist/fdf/minilibx/mlx.h

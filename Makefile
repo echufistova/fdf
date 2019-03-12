@@ -14,7 +14,7 @@ NAME = fdf
 
 LIBFT = ./libft/libftprintf.a
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS =
 
 SRC = main.c ft_list_coord.c
 

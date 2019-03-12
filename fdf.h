@@ -9,6 +9,7 @@
 #include "libft/get_next_line.h"
 #include "libft/ft_printf.h"
 # include "minilibx/mlx.h"
+#include "math.h"
 
 typedef struct s_point
 {
@@ -18,22 +19,21 @@ typedef struct s_point
 
 typedef struct s_coord
 {
-    int x;
-    int y;
-    int z;
-    int color;
+    double x;
+    double y;
+    double z;
+    double color;
 
 }               t_coord;
 
 typedef struct s_list_coord
 {
-    int x;
-    int y;
-    int z;
+    double x;
+    double y;
+    double z;
     int color;
     int flag_eo_line;
     struct s_list_coord *next;
-    struct s_list_coord *prev;
 
 }               t_list_coord;
 
@@ -50,6 +50,8 @@ typedef struct s_map
     int endian;
     int bpp;
     int size_line;
+    int win_x;
+    int win_y;
 }               t_map;
 
 void print_list_coord(t_list_coord *list);

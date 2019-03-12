@@ -6,6 +6,7 @@ CMakeFiles/fdf.dir/ft_list_coord.c.o: ../ft_list_coord.c
 CMakeFiles/fdf.dir/ft_list_coord.c.o: ../libft/ft_printf.h
 CMakeFiles/fdf.dir/ft_list_coord.c.o: ../libft/get_next_line.h
 CMakeFiles/fdf.dir/ft_list_coord.c.o: ../libft/libft.h
+CMakeFiles/fdf.dir/ft_list_coord.c.o: ../minilibx/mlx.h
 
 CMakeFiles/fdf.dir/libft/ft_atoi.c.o: ../libft/ft_atoi.c
 CMakeFiles/fdf.dir/libft/ft_atoi.c.o: ../libft/libft.h
@@ -276,4 +277,5 @@ CMakeFiles/fdf.dir/main.c.o: ../libft/ft_printf.h
 CMakeFiles/fdf.dir/main.c.o: ../libft/get_next_line.h
 CMakeFiles/fdf.dir/main.c.o: ../libft/libft.h
 CMakeFiles/fdf.dir/main.c.o: ../main.c
+CMakeFiles/fdf.dir/main.c.o: ../minilibx/mlx.h
 

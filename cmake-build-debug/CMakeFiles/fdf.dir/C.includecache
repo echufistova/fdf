@@ -13,12 +13,8 @@ libft/get_next_line.h
 /Users/ychufist/fdf/libft/get_next_line.h
 libft/ft_printf.h
 /Users/ychufist/fdf/libft/ft_printf.h
-mlx.h
-/Users/ychufist/fdf/mlx.h
-
-/Users/ychufist/fdf/ft_list_coord.c
-fdf.h
-/Users/ychufist/fdf/fdf.h
+minilibx/mlx.h
+/Users/ychufist/fdf/minilibx/mlx.h
 
 /Users/ychufist/fdf/libft/ft_printf.h
 libft.h
@@ -77,4 +73,6 @@ stdio.h
 -
 fdf.h
 /Users/ychufist/fdf/fdf.h
+
+/Users/ychufist/fdf/minilibx/mlx.h
 
