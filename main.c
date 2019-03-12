@@ -63,12 +63,9 @@ void make_coords(t_map *map)
 {
 //    int color;
     t_point ij;
-    t_point xy;
     t_list_coord *dop;
 
     ij.y = 0;
-//    xy.x = ((map->size.x + 1) * 50 - map->size.x * 20)/2;
-//    xy.y = ((map->size.y + 1) * 50 - map->size.y * 20)/2;
     ft_printf("nap size y : %d ", map->size.y);
     ft_printf("nap size x : %d\n", map->size.x);
     dop = map->begin;
@@ -79,18 +76,18 @@ void make_coords(t_map *map)
         map->coords[ij.y] = (t_coord*)malloc(sizeof(t_coord) * map->size.x);
         while (ij.x < map->size.x)
         {
-            map->coords[ij.y][ij.x].x = dop->x * 20;//+ xy.x;
-            map->coords[ij.y][ij.x].y = dop->x * 20;// + xy.y;
+            map->coords[ij.y][ij.x].x = dop->x * 20;
+            map->coords[ij.y][ij.x].y = dop->y * 20;
             map->coords[ij.y][ij.x].z = dop->z * 20;
             map->coords[ij.y][ij.x].color = dop->color;
             if (dop->flag_eo_line != 1)
                 dop = dop->next;
-            printf("%3f ", map->coords[ij.y][ij.x].z);
+            ft_printf("%3d", map->coords[ij.y][ij.x].z);
             ij.x++;
         }
         ij.y++;
         dop = dop->next;
-        printf("   h\n");
+        ft_printf("   h\n");
     }
 }
 
