@@ -38,3 +38,16 @@ void print_list_coord(t_list_coord *list)
     }
     ft_printf("\n");
 }
+
+void			free_list(t_list_coord **dop)
+{
+    t_list_coord *tmp;
+
+    while (*dop)
+    {
+        tmp = (*dop)->next;
+//        free((*dop)->links);
+        free(*dop);
+        *dop = tmp;
+    }
+}
