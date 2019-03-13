@@ -82,7 +82,7 @@ void make_coords(t_map *map)
         {
             map->coords[ij.y][ij.x].x = (dop->x + xy.x) * 20;
             map->coords[ij.y][ij.x].y = (dop->y + xy.y) * 20;
-            map->coords[ij.y][ij.x].z = dop->z * 10;
+            map->coords[ij.y][ij.x].z = dop->z * 20;
             map->coords[ij.y][ij.x].color = dop->color;
             if (dop->flag_eo_line != 1)
                 dop = dop->next;
@@ -97,11 +97,43 @@ void make_coords(t_map *map)
 //    free_list(&dop);
 }
 
+void get_new(t_map *map, int num)
+{
+    t_point ij;
+
+    ij.y = -1;
+    while (++ij.y < map->size.y)
+    {
+        ij.x = -1;
+        while (++ij.x < map->size.x)
+        {
+            map->coords[ij.y][ij.x].x += num;
+            map->coords[ij.y][ij.x].y += num;
+            map->coords[ij.y][ij.x].z += num;
+        }
+    }
+}
+
+int move(t_map *map, int key)
+{
+    if (key == 39)
+    {
+        get_new(map, 1);
+        draw(map);
+    }
+    else if (key == 37)
+    {
+        get_new(map, -1);
+        draw(map);
+    }
+    return (1);
+}
+
 void make_window(t_map *map)
 {
     map->mlx = mlx_init();
-    map->win_x = 1000;
-    map->win_y = 700;
+    map->win_x = 1200;
+    map->win_y = 800;
     map->window = mlx_new_window(map->mlx, map->win_x,
                                  map->win_y, "FDF");
     map->endian = 0;
@@ -191,13 +223,13 @@ void xyz_in_xy(t_map *map, double angle)
     }
 }
 
-
 void draw_map(t_map *map)
 {
-    xyz_in_xy(map, 15);
+    xyz_in_xy(map, 320);
     draw(map);
     ft_printf("here3\n");
     mlx_put_image_to_window(map->mlx, map->window, map->img, 0, 0);
+    mlx_hook(map->window, 2, 5, move, map);
     system("leaks fdf");
     mlx_loop(map->mlx);
 }
