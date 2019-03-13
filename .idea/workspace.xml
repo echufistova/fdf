@@ -13,11 +13,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c47c48f7-c1fc-455e-b0e6-140d7a2336ad" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fdf.h" beforeDir="false" afterPath="$PROJECT_DIR$/fdf.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ft_list_coord.c" beforeDir="false" afterPath="$PROJECT_DIR$/ft_list_coord.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/ft_printf.h.gch" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_printf.h.gch" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft/get_next_line.h.gch" beforeDir="false" afterPath="$PROJECT_DIR$/libft/get_next_line.h.gch" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,8 +31,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/main.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="658">
-                  <caret line="44" column="21" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="21" />
+                <state relative-caret-position="727">
+                  <caret line="198" column="25" lean-forward="true" selection-start-line="198" selection-start-column="25" selection-end-line="198" selection-end-column="25" />
                   <folding>
                     <element signature="e#0#18#0" expanded="true" />
                   </folding>
@@ -102,6 +99,9 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="150">
                   <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+                  <folding>
+                    <element signature="e#94#118#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -113,8 +113,11 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/fdf.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="126">
-                  <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+                <state relative-caret-position="465">
+                  <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+                  <folding>
+                    <element signature="e#94#118#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -217,18 +220,18 @@
       <workItem from="1552226372413" duration="8695000" />
       <workItem from="1552311518128" duration="6607000" />
       <workItem from="1552395646346" duration="11373000" />
-      <workItem from="1552483876530" duration="4801000" />
+      <workItem from="1552483876530" duration="6584000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31476000" />
+    <option name="totallyTimeSpent" value="33259000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="176" y="23" width="1703" height="1517" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18783866" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12281758" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -317,13 +320,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <folding>
+            <element signature="e#94#118#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="658">
-          <caret line="44" column="21" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="21" />
+        <state relative-caret-position="727">
+          <caret line="198" column="25" lean-forward="true" selection-start-line="198" selection-start-column="25" selection-end-line="198" selection-end-column="25" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>

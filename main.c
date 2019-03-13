@@ -165,15 +165,42 @@ void draw(t_map *map)
     }
 }
 
+void xyz_in_xy(t_map *map, double angle)
+{
+    t_point ij;
+    t_coord xy0;
+    t_coord xy1;
+
+    ij.y = -1;
+    while (++ij.y < map->size.y)
+    {
+        ij.x = -1;
+        while (++ij.x < map->size.x)
+        {
+            xy0.x = map->coords[ij.y][ij.x].x;
+            xy0.y = map->coords[ij.y][ij.x].y * cos(angle) + map->coords[ij.y][ij.x].z * sin(angle);
+            xy0.z = map->coords[ij.y][ij.x].z * cos(angle) - map->coords[ij.y][ij.x].y * sin(angle);
+
+            xy1.x = xy0.x * cos(angle) - xy0.z * sin(angle);
+            xy1.y = xy0.y;
+            xy1.z = xy0.z * cos(angle) + xy0.x * sin(angle);
+
+            map->coords[ij.y][ij.x].x = xy1.x * cos(angle) + xy1.y * sin(angle);
+            map->coords[ij.y][ij.x].y = xy1.y * cos(angle) - xy1.x * sin(angle);
+        }
+    }
+}
+
+
 void draw_map(t_map *map)
 {
+    xyz_in_xy(map, 15);
     draw(map);
     ft_printf("here3\n");
     mlx_put_image_to_window(map->mlx, map->window, map->img, 0, 0);
     system("leaks fdf");
     mlx_loop(map->mlx);
 }
-
 
 int main(int ac, char **av)
 {
