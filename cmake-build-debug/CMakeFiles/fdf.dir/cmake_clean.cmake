@@ -84,6 +84,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/fdf.dir/libft/get_next_line.c.o"
   "CMakeFiles/fdf.dir/ft_list_coord.c.o"
   "CMakeFiles/fdf.dir/main.c.o"
+  "CMakeFiles/fdf.dir/ft_coords.c.o"
   "fdf.pdb"
   "fdf"
 )

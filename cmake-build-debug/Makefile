@@ -123,6 +123,33 @@ fdf/fast:
 	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/build
 .PHONY : fdf/fast
 
+ft_coords.o: ft_coords.c.o
+
+.PHONY : ft_coords.o
+
+# target to build an object file
+ft_coords.c.o:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/ft_coords.c.o
+.PHONY : ft_coords.c.o
+
+ft_coords.i: ft_coords.c.i
+
+.PHONY : ft_coords.i
+
+# target to preprocess a source file
+ft_coords.c.i:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/ft_coords.c.i
+.PHONY : ft_coords.c.i
+
+ft_coords.s: ft_coords.c.s
+
+.PHONY : ft_coords.s
+
+# target to generate assembly for a file
+ft_coords.c.s:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/ft_coords.c.s
+.PHONY : ft_coords.c.s
+
 ft_list_coord.o: ft_list_coord.c.o
 
 .PHONY : ft_list_coord.o
@@ -2427,6 +2454,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... fdf"
+	@echo "... ft_coords.o"
+	@echo "... ft_coords.i"
+	@echo "... ft_coords.s"
 	@echo "... ft_list_coord.o"
 	@echo "... ft_list_coord.i"
 	@echo "... ft_list_coord.s"

@@ -14,6 +14,8 @@ t_list_coord	*ft_list_coord_new(int x, int y, char *line)
     res->x = x;
     res->y = y;
     res->z = ft_atoi(line);
+    ft_printf("%s\n", line);
+    ft_printf(" %d", res->z);
 //    if (ft_strchr(line, ','))
 //    {
 //        dop = ft_strchr(line, ',');

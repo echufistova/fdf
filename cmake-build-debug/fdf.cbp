@@ -87,6 +87,9 @@
 		<Unit filename="/Users/ychufist/fdf/fdf.h">
 			<Option target="fdf"/>
 		</Unit>
+		<Unit filename="/Users/ychufist/fdf/ft_coords.c">
+			<Option target="fdf"/>
+		</Unit>
 		<Unit filename="/Users/ychufist/fdf/ft_list_coord.c">
 			<Option target="fdf"/>
 		</Unit>

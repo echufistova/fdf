@@ -1,7 +1,8 @@
 cmake_minimum_required(VERSION 3.13)
 project(fdf C)
 
-set(CMAKE_C_STANDARD 11)
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -lmlx -framework OpenGL -framework AppKit")
+set(CMAKE_C_STANDARD 11 )
 
 include_directories(.)
 include_directories(libft)
@@ -95,4 +96,4 @@ add_executable(fdf
         libft/libft.h
         fdf.h
         ft_list_coord.c
-        main.c)
+        main.c ft_coords.c)
