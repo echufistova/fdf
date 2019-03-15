@@ -59,10 +59,10 @@ void recount_map_xyz(t_map *map, int key, int num)
         ij.x = -1;
         while (++ij.x < map->size.x)
         {
+            if (key == 123 || key == 124)
+                map->coords[ij.y][ij.x].x += num;
             if (key == 125 || key == 126)
                 map->coords[ij.y][ij.x].y += num;
-            else if (key == 123 || key == 124)
-                map->coords[ij.y][ij.x].x += num;
         }
     }
 }

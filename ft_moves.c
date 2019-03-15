@@ -30,12 +30,12 @@ void movexy(t_map *map, int key)
 {
     if (key == 123)
         recount_map_xyz(map, 123, -10);
-    else if (key == 124)
+    if (key == 124)
         recount_map_xyz(map, 124, 10);
-    else if (key == 125)
-        recount_map_xyz(map, 124, -10);
-    else if (key == 126)
-        recount_map_xyz(map, 123, 10);
+    if (key == 125)
+        recount_map_xyz(map, 125, 10);
+    if (key == 126)
+        recount_map_xyz(map, 126, -10);
     ft_bzero(map->image, 4 * map->win_x * map->win_x);
 //    mlx_clear_window(map->mlx, map->window);
 //    move_map_to_centre(map);
