@@ -150,6 +150,33 @@ ft_coords.c.s:
 	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/ft_coords.c.s
 .PHONY : ft_coords.c.s
 
+ft_draw.o: ft_draw.c.o
+
+.PHONY : ft_draw.o
+
+# target to build an object file
+ft_draw.c.o:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/ft_draw.c.o
+.PHONY : ft_draw.c.o
+
+ft_draw.i: ft_draw.c.i
+
+.PHONY : ft_draw.i
+
+# target to preprocess a source file
+ft_draw.c.i:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/ft_draw.c.i
+.PHONY : ft_draw.c.i
+
+ft_draw.s: ft_draw.c.s
+
+.PHONY : ft_draw.s
+
+# target to generate assembly for a file
+ft_draw.c.s:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/ft_draw.c.s
+.PHONY : ft_draw.c.s
+
 ft_list_coord.o: ft_list_coord.c.o
 
 .PHONY : ft_list_coord.o
@@ -176,6 +203,33 @@ ft_list_coord.s: ft_list_coord.c.s
 ft_list_coord.c.s:
 	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/ft_list_coord.c.s
 .PHONY : ft_list_coord.c.s
+
+ft_moves.o: ft_moves.c.o
+
+.PHONY : ft_moves.o
+
+# target to build an object file
+ft_moves.c.o:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/ft_moves.c.o
+.PHONY : ft_moves.c.o
+
+ft_moves.i: ft_moves.c.i
+
+.PHONY : ft_moves.i
+
+# target to preprocess a source file
+ft_moves.c.i:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/ft_moves.c.i
+.PHONY : ft_moves.c.i
+
+ft_moves.s: ft_moves.c.s
+
+.PHONY : ft_moves.s
+
+# target to generate assembly for a file
+ft_moves.c.s:
+	$(MAKE) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/ft_moves.c.s
+.PHONY : ft_moves.c.s
 
 libft/ft_atoi.o: libft/ft_atoi.c.o
 
@@ -2457,9 +2511,15 @@ help:
 	@echo "... ft_coords.o"
 	@echo "... ft_coords.i"
 	@echo "... ft_coords.s"
+	@echo "... ft_draw.o"
+	@echo "... ft_draw.i"
+	@echo "... ft_draw.s"
 	@echo "... ft_list_coord.o"
 	@echo "... ft_list_coord.i"
 	@echo "... ft_list_coord.s"
+	@echo "... ft_moves.o"
+	@echo "... ft_moves.i"
+	@echo "... ft_moves.s"
 	@echo "... libft/ft_atoi.o"
 	@echo "... libft/ft_atoi.i"
 	@echo "... libft/ft_atoi.s"

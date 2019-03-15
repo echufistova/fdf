@@ -5,7 +5,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "/Users/ychufist/fdf/ft_coords.c" "/Users/ychufist/fdf/cmake-build-debug/CMakeFiles/fdf.dir/ft_coords.c.o"
+  "/Users/ychufist/fdf/ft_draw.c" "/Users/ychufist/fdf/cmake-build-debug/CMakeFiles/fdf.dir/ft_draw.c.o"
   "/Users/ychufist/fdf/ft_list_coord.c" "/Users/ychufist/fdf/cmake-build-debug/CMakeFiles/fdf.dir/ft_list_coord.c.o"
+  "/Users/ychufist/fdf/ft_moves.c" "/Users/ychufist/fdf/cmake-build-debug/CMakeFiles/fdf.dir/ft_moves.c.o"
   "/Users/ychufist/fdf/libft/ft_atoi.c" "/Users/ychufist/fdf/cmake-build-debug/CMakeFiles/fdf.dir/libft/ft_atoi.c.o"
   "/Users/ychufist/fdf/libft/ft_atoi_base.c" "/Users/ychufist/fdf/cmake-build-debug/CMakeFiles/fdf.dir/libft/ft_atoi_base.c.o"
   "/Users/ychufist/fdf/libft/ft_bzero.c" "/Users/ychufist/fdf/cmake-build-debug/CMakeFiles/fdf.dir/libft/ft_bzero.c.o"

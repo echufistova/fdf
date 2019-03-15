@@ -31,14 +31,13 @@ int get_map_list(t_map *map, int fd)
             return (0);
         while (split[++i])
         {
-            printf("hh %d : ", i);
-            ft_printf("%s\n", split[i]);
+//            ft_printf("hh %d : \n", i);
+//            ft_printf(" split: %s\n", split[i]);
             map->list_coord->next = ft_list_coord_new(i, row, split[i]);
             map->list_coord = map->list_coord->next;
-            printf("%3f", map->list_coord->z);
+//            printf(" map->list_coord->z %3f\n\n", map->list_coord->z);
         }
-        ft_printf("dd %d ", i);
-        printf("\n");
+        printf("\n\n");
 //    map->list_coord->z = ft_atoi(split[0]); // ТУТ ЕЩЕ НУЖНО ДОБАВИТЬ ЦВЕТ
         map->list_coord->flag_eo_line = 1;
         while (--i >= 0)
@@ -50,19 +49,7 @@ int get_map_list(t_map *map, int fd)
     return (1);
 }
 
-void init(t_map *map)
-{
-    map->list_coord = (t_list_coord*)malloc(sizeof(t_list_coord));
-    map->list_coord->next = NULL;
-    map->list_coord->x = 0;
-    map->list_coord->y = 0;
-    map->list_coord->z = 0; //ТУТ НЕ 0
-    map->begin = map->list_coord;
-    map->coords = NULL;
-
-}
-
-void get_new(t_map *map, int num)
+void recount_map_xyz(t_map *map, int key, int num)
 {
     t_point ij;
 
@@ -72,96 +59,10 @@ void get_new(t_map *map, int num)
         ij.x = -1;
         while (++ij.x < map->size.x)
         {
-            map->coords[ij.y][ij.x].x += num;
-            map->coords[ij.y][ij.x].y += num;
-            map->coords[ij.y][ij.x].z += num;
-        }
-    }
-}
-
-int move(t_map *map, int key)
-{
-    if (key == 124)
-    {
-        get_new(map, 1);
-        mlx_clear_window(map->mlx, map->window);
-        draw(map);
-    }
-    else if (key == 37)
-    {
-        get_new(map, -1);
-        mlx_clear_window(map->mlx, map->window);
-        draw(map);
-    }
-    return (1);
-}
-
-void make_window(t_map *map)
-{
-    map->mlx = mlx_init();
-    map->win_x = 1200;
-    map->win_y = 800;
-    map->window = mlx_new_window(map->mlx, map->win_x,
-                                 map->win_y, "FDF");
-    map->endian = 0;
-    map->bpp = 32;
-    map->img = mlx_new_image(map->mlx, map->win_x, map->win_y);
-    map->image = (int *) mlx_get_data_addr(map->img, &map->bpp,
-            &map->size_line, &map->endian);
-}
-
-void draw_line(t_map *map, t_coord c0, t_coord c1)
-{
-    printf("here4\n");
-     t_point xy;
-
-    xy.x = c0.x;
-    printf("x: %d ", xy.x);
-    xy.y = c0.y;
-    printf("y: %d \n", xy.y);
-    if (fabs(c1.y - c0.y) > fabs(c1.x - c0.x)) {
-        ft_printf("here8\n");
-        while (c0.y > c1.y ? xy.y >= c1.y : xy.y <= c1.y) //вставляем по х
-        {
-            xy.x = ((xy.y - c0.y) / (c0.y - c1.y) * (c0.x - c1.x) + c0.x);
-            map->image[xy.x + (xy.y * map->win_x)] = 0x8fcbc;
-            c1.y > c0.y ? xy.y++ : xy.y--;
-        }
-        printf("here5\n");
-    }
-    else
-        {
-        while (c0.x > c1.x ? xy.x >= c1.x : xy.x <= c1.x) //вставляем по у
-        {
-            xy.y = ((xy.x - c0.x) / (c0.x - c1.x) * (c0.y - c1.y) + c0.y);
-            map->image[xy.x + (xy.y * map->win_x)] = 0x8fcbc;
-            c1.x > c0.x ? xy.x++ : xy.x--;
-        }
-        printf("here6\n");
-    }
-}
-
-void draw(t_map *map)
-{
-    t_point	xy;
-
-    xy.y = -1;
-    ft_printf("here91\n");
-    while (++xy.y < map->size.y)
-    {
-        xy.x = -1;
-        while (++xy.x < map->size.x - 1)
-        {
-            draw_line(map, map->coords[xy.y][xy.x], map->coords[xy.y][xy.x + 1]);
-        }
-    }
-    xy.y = -1;
-    while (++xy.y < map->size.y - 1)
-    {
-        xy.x = -1;
-        while (++xy.x < map->size.x)
-        {
-            draw_line(map, map->coords[xy.y][xy.x], map->coords[xy.y + 1][xy.x]);
+            if (key == 125 || key == 126)
+                map->coords[ij.y][ij.x].y += num;
+            else if (key == 123 || key == 124)
+                map->coords[ij.y][ij.x].x += num;
         }
     }
 }
@@ -173,7 +74,6 @@ void xyz_in_xy(t_map *map, double angle)
     t_coord xy1;
 
     ij.y = -1;
-    ft_printf("here1111\n");
     while (++ij.y < map->size.y)
     {
         ij.x = -1;
@@ -182,26 +82,37 @@ void xyz_in_xy(t_map *map, double angle)
             xy0.x = map->coords[ij.y][ij.x].x;
             xy0.y = map->coords[ij.y][ij.x].y * cos(angle) + map->coords[ij.y][ij.x].z * sin(angle);
             xy0.z = map->coords[ij.y][ij.x].z * cos(angle) - map->coords[ij.y][ij.x].y * sin(angle);
-
             xy1.x = xy0.x * cos(angle) - xy0.z * sin(angle);
             xy1.y = xy0.y;
             xy1.z = xy0.z * cos(angle) + xy0.x * sin(angle);
-
             map->coords[ij.y][ij.x].x = xy1.x * cos(angle) + xy1.y * sin(angle);
             map->coords[ij.y][ij.x].y = xy1.y * cos(angle) - xy1.x * sin(angle);
         }
     }
 }
 
-void draw_map(t_map *map)
+void make_window(t_map *map)
 {
-//    xyz_in_xy(map, 15);
-    draw(map);
-    ft_printf("here3\n");
-    mlx_put_image_to_window(map->mlx, map->window, map->img, 0, 0);
-    mlx_hook(map->window, 2, 0, move, map);
-    system("leaks fdf");
-    mlx_loop(map->mlx);
+    map->mlx = mlx_init();
+    map->win_x = 1200;
+    map->win_y = 800;
+    map->window = mlx_new_window(map->mlx, map->win_x, map->win_y, "FDF");
+    map->endian = 0;
+    map->bpp = 32;
+    map->img = mlx_new_image(map->mlx, map->win_x, map->win_y);
+    map->image = (int *) mlx_get_data_addr(map->img, &map->bpp,
+                                           &map->size_line, &map->endian);
+}
+
+void init(t_map *map)
+{
+    map->list_coord = (t_list_coord*)malloc(sizeof(t_list_coord));
+    map->list_coord->next = NULL;
+    map->list_coord->x = 0;
+    map->list_coord->y = 0;
+    map->list_coord->z = 0; //ТУТ НЕ 0
+    map->begin = map->list_coord;
+    map->coords = NULL;
 }
 
 int main(int ac, char **av)
@@ -216,12 +127,16 @@ int main(int ac, char **av)
         return (0);
     //    if (valid_map(map))
     make_coords(&map);
-    ft_printf("here\n");
+//    ft_printf("here\n");
     make_window(&map);
-    ft_printf("here1\n");
+//    ft_printf("here1\n");
+    xyz_in_xy(&map, 15);
+//    ft_printf("hello5\n");
+    move_map_to_centre(&map);
     draw_map(&map);
 //    ft_printf("here2\n");
-    printf("Hello, World!\n");
-    system("leaks fdf");
+//    printf("Hello, World!\n");
+    mlx_loop(map.mlx);
+//    system("leaks fdf");
     return (0);
 }

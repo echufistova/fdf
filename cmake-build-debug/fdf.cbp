@@ -90,7 +90,13 @@
 		<Unit filename="/Users/ychufist/fdf/ft_coords.c">
 			<Option target="fdf"/>
 		</Unit>
+		<Unit filename="/Users/ychufist/fdf/ft_draw.c">
+			<Option target="fdf"/>
+		</Unit>
 		<Unit filename="/Users/ychufist/fdf/ft_list_coord.c">
+			<Option target="fdf"/>
+		</Unit>
+		<Unit filename="/Users/ychufist/fdf/ft_moves.c">
 			<Option target="fdf"/>
 		</Unit>
 		<Unit filename="/Users/ychufist/fdf/libft/ft_atoi.c">

@@ -56,7 +56,13 @@ typedef struct s_map
 
 void print_list_coord(t_list_coord *list);
 void			free_list(t_list_coord **dop);
-void draw(t_map *map);
+void draw_net(t_map *map);
+void draw_map(t_map *map);
+void draw_line(t_map *map, t_coord c0, t_coord c1);
 void    make_coords(t_map *map);
+void move_map_to_centre(t_map *map);
+void xyz_in_xy(t_map *map, double angle);
+void recount_map_xyz(t_map *map, int key, int num);
+int bonuses(int key, void *map);
 t_list_coord	*ft_list_coord_new(int x, int y, char *line);
 #endif //FDF_FDF_H
