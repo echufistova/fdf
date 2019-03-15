@@ -91,19 +91,6 @@ void xyz_in_xy(t_map *map, double angle)
     }
 }
 
-void make_window(t_map *map)
-{
-    map->mlx = mlx_init();
-    map->win_x = 1200;
-    map->win_y = 800;
-    map->window = mlx_new_window(map->mlx, map->win_x, map->win_y, "FDF");
-    map->endian = 0;
-    map->bpp = 32;
-    map->img = mlx_new_image(map->mlx, map->win_x, map->win_y);
-    map->image = (int *) mlx_get_data_addr(map->img, &map->bpp,
-                                           &map->size_line, &map->endian);
-}
-
 void init(t_map *map)
 {
     map->list_coord = (t_list_coord*)malloc(sizeof(t_list_coord));
@@ -113,6 +100,14 @@ void init(t_map *map)
     map->list_coord->z = 0; //ТУТ НЕ 0
     map->begin = map->list_coord;
     map->coords = NULL;
+    map->angle = 15;
+    map->mlx = mlx_init();
+    map->window = mlx_new_window(map->mlx, WIN_X, WIN_Y, "FDF");
+    map->endian = 0;
+    map->bpp = 32;
+    map->img = mlx_new_image(map->mlx, WIN_X, WIN_Y);
+    map->image = (int *) mlx_get_data_addr(map->img, &map->bpp,
+                                           &map->size_line, &map->endian);
 }
 
 int main(int ac, char **av)
@@ -128,14 +123,11 @@ int main(int ac, char **av)
     //    if (valid_map(map))
     make_coords(&map);
 //    ft_printf("here\n");
-    make_window(&map);
 //    ft_printf("here1\n");
-    xyz_in_xy(&map, 15);
+    xyz_in_xy(&map, map.angle);
 //    ft_printf("hello5\n");
     move_map_to_centre(&map);
     draw_map(&map);
-//    ft_printf("here2\n");
-//    printf("Hello, World!\n");
     mlx_loop(map.mlx);
 //    system("leaks fdf");
     return (0);

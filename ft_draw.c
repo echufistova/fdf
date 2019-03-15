@@ -18,7 +18,7 @@ void draw_line(t_map *map, t_coord c0, t_coord c1)
         while (c0.y > c1.y ? xy.y >= c1.y : xy.y <= c1.y) //вставляем по х
         {
             xy.x = ((xy.y - c0.y) / (c0.y - c1.y) * (c0.x - c1.x) + c0.x);
-            map->image[xy.x + (xy.y * map->win_x)] = 0x8fcbc;
+            map->image[xy.x + (xy.y * WIN_X)] = 0x8fcbc;
             c1.y > c0.y ? xy.y++ : xy.y--;
         }
 //        printf("here5\n");
@@ -28,7 +28,7 @@ void draw_line(t_map *map, t_coord c0, t_coord c1)
         while (c0.x > c1.x ? xy.x >= c1.x : xy.x <= c1.x) //вставляем по у
         {
             xy.y = ((xy.x - c0.x) / (c0.x - c1.x) * (c0.y - c1.y) + c0.y);
-            map->image[xy.x + (xy.y * map->win_x)] = 0x8fcbc;
+            map->image[xy.x + (xy.y * WIN_X)] = 0x8fcbc;
             c1.x > c0.x ? xy.x++ : xy.x--;
         }
 //        printf("here6\n");

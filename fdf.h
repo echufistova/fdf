@@ -4,12 +4,15 @@
 
 #ifndef FDF_FDF_H
 #define FDF_FDF_H
+# define WIN_X 1200
+# define WIN_Y 800
 
 #include "libft/libft.h"
 #include "libft/get_next_line.h"
 #include "libft/ft_printf.h"
 # include "minilibx/mlx.h"
 #include "math.h"
+
 
 typedef struct s_point
 {
@@ -50,8 +53,7 @@ typedef struct s_map
     int endian;
     int bpp;
     int size_line;
-    int win_x;
-    int win_y;
+    int angle;
 }               t_map;
 
 void print_list_coord(t_list_coord *list);
