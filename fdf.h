@@ -62,7 +62,7 @@ void draw_net(t_map *map);
 void draw_map(t_map *map);
 void draw_line(t_map *map, t_coord c0, t_coord c1);
 void    make_coords(t_map *map);
-void move_map_to_centre(t_map *map);
+void move_map_to_centre(t_map *map, int n, int p1, int p2);
 void xyz_in_xy(t_map *map, double angle);
 void rotate_x(t_map *map, double angle);
 void rotate_y(t_map *map, double angle);

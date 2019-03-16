@@ -23,6 +23,7 @@ void make_coords(t_map *map)
         map->coords[ij.y] = (t_coord*)malloc(sizeof(t_coord) * map->size.x);
         while (ij.x < map->size.x)
         {
+            printf("dop->x: %f\n", dop->x);
             map->coords[ij.y][ij.x].x = dop->x * 20;
             map->coords[ij.y][ij.x].y = dop->y * 20;
             map->coords[ij.y][ij.x].z = dop->z * 5;

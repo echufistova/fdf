@@ -101,7 +101,7 @@ int main(int ac, char **av)
     //    if (valid_map(map))
     make_coords(&map);
     ft_printf("here\n");
-    move_map_to_centre(&map);
+    move_map_to_centre(&map, 0, 0, 0);
     ft_printf("here2\n");
     rotate_x(&map, -1);
     rotate_y(&map, -0.5);
@@ -109,6 +109,7 @@ int main(int ac, char **av)
 //    move_map_to_centre(&map);
 //    xyz_in_xy(&map, map.angle);
     ft_printf("here3\n");
+    move_map_to_centre(&map, 1, WIN_X / 2, WIN_Y / 2);
     draw_map(&map);
     mlx_loop(map.mlx);
 //    system("leaks fdf");

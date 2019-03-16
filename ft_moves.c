@@ -4,24 +4,34 @@
 
 #include "fdf.h"
 
-void move_map_to(t_map *map, int n)
+void move_map_to_centre(t_map *map, int n, int p1, int p2)
 {
     t_point ij;
-    t_coord xy;
     t_coord coord;
 
-    xy.y = map->size.y * 10;
-    xy.x = map->size.x * 10;
     ij.y = -1;
+//    ft_printf("map size.x - %d, map size.y %d\n", map->size.x * 10, map->size.y * 10);
     while (++ij.y < map->size.y)
     {
         ij.x = -1;
         while (++ij.x < map->size.x)
         {
+//            printf("coord.x : %f, coord.y: %f\n", map->coords[ij.y][ij.x].x, map->coords[ij.y][ij.x].y);
             coord.x = map->coords[ij.y][ij.x].x;
-            map->coords[ij.y][ij.x].x = coord.x - xy.x + (WIN_X / 2);
             coord.y = map->coords[ij.y][ij.x].y;
-            map->coords[ij.y][ij.x].y = coord.y - xy.y + (WIN_Y / 2);
+//            ft_printf("coord.x : %d, coord.y: %d\n", coord.x, coord.y);
+            if (n == 0)
+            {
+                map->coords[ij.y][ij.x].x = coord.x - map->size.x * 5;
+                map->coords[ij.y][ij.x].y = coord.y - map->size.y * 5;
+                printf("n: %d, x: %f, y: %f\n", n, map->coords[ij.y][ij.x].x, map->coords[ij.y][ij.x].y);
+            }
+            if (n == 1)
+            {
+                printf("n: %d, x: %f, y: %f\n", n, map->coords[ij.y][ij.x].x, map->coords[ij.y][ij.x].y);
+                map->coords[ij.y][ij.x].x = coord.x + p1;
+                map->coords[ij.y][ij.x].y = coord.y + p2;
+            }
         }
     }
 }
@@ -51,6 +61,7 @@ void rotate_y(t_map *map, double angle)
     int i;
     int j;
     t_coord xy;
+
 
     i = -1;
     while (++i < map->size.y)
@@ -84,9 +95,6 @@ void rotate_z(t_map *map, double angle)
             map->coords[i][j].y = xy.x * sin(angle) + xy.y * cos(angle);
         }
     }
-    move_map_to_centre(map);
-    ft_bzero(map->image, 4 * WIN_X * WIN_Y);
-    draw_map(map);
 }
 
 
@@ -113,9 +121,10 @@ void movexy(t_map *map, int key)
 
 void rotatexyz(t_map *map, int key)
 {
+    move_map_to_centre(map, 1, -WIN_X / 2, -WIN_Y / 2);
     if (key == 0)
-        rotate_z(map, -0.1);
-    move_map_to_centre(map);
+        rotate_z(map, 0.1);
+    move_map_to_centre(map, 1, WIN_X / 2, WIN_Y / 2);
     ft_bzero(map->image, 4 * WIN_X * WIN_Y);
     draw_map(map);
 }
