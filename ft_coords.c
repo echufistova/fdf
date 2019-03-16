@@ -29,7 +29,7 @@ void make_coords(t_map *map)
             map->coords[ij.y][ij.x].color = dop->color;
             if (dop->flag_eo_line != 1)
                 dop = dop->next;
-            ft_printf("%10d", map->coords[ij.y][ij.x].z);
+            printf("t%10f", map->coords[ij.y][ij.x].z);
             ij.x++;
         }
         ij.y++;

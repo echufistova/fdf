@@ -14,8 +14,11 @@
     <list default="true" id="c47c48f7-c1fc-455e-b0e6-140d7a2336ad" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fdf.h" beforeDir="false" afterPath="$PROJECT_DIR$/fdf.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ft_coords.c" beforeDir="false" afterPath="$PROJECT_DIR$/ft_coords.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ft_draw.c" beforeDir="false" afterPath="$PROJECT_DIR$/ft_draw.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ft_moves.c" beforeDir="false" afterPath="$PROJECT_DIR$/ft_moves.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_printf.h.gch" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_printf.h.gch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/get_next_line.h.gch" beforeDir="false" afterPath="$PROJECT_DIR$/libft/get_next_line.h.gch" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -27,14 +30,14 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5816944">
+    <splitter split-orientation="horizontal" split-proportion="0.5445836">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/main.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="807">
-                  <caret line="102" column="18" selection-start-line="102" selection-start-column="18" selection-end-line="102" selection-end-column="18" />
+                <state relative-caret-position="1260">
+                  <caret line="84" column="18" lean-forward="true" selection-start-line="84" selection-start-column="18" selection-end-line="84" selection-end-column="18" />
                   <folding>
                     <element signature="e#0#18#0" expanded="true" />
                   </folding>
@@ -42,11 +45,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/ft_moves.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="570">
-                  <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
+                <state relative-caret-position="360">
+                  <caret line="24" column="9" lean-forward="true" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
                 </state>
               </provider>
             </entry>
@@ -54,8 +57,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/ft_draw.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="720">
-                  <caret line="48" column="36" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="36" />
+                <state relative-caret-position="399">
+                  <caret line="37" column="9" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
                 </state>
               </provider>
             </entry>
@@ -63,8 +66,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/ft_coords.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="405">
-                  <caret line="27" column="50" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
+                <state>
+                  <caret column="2" selection-start-column="2" selection-end-column="2" />
                 </state>
               </provider>
             </entry>
@@ -81,7 +84,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/ft_list_coord.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="272">
+                <state relative-caret-position="461">
                   <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
                 </state>
               </provider>
@@ -108,7 +111,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/libft/ft_atoi.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="210">
+                <state relative-caret-position="225">
                   <caret line="15" selection-start-line="15" selection-end-line="21" selection-end-column="1" />
                 </state>
               </provider>
@@ -117,11 +120,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/fdf.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="814">
+                <state relative-caret-position="900">
                   <caret line="60" column="5" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
-                  <folding>
-                    <element signature="e#94#118#0" expanded="true" />
-                  </folding>
                 </state>
               </provider>
             </entry>
@@ -133,11 +133,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/fdf.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="825">
-                  <caret line="55" column="14" selection-start-line="55" selection-start-column="14" selection-end-line="55" selection-end-column="14" />
-                  <folding>
-                    <element signature="e#94#118#0" expanded="true" />
-                  </folding>
+                <state relative-caret-position="955">
+                  <caret line="69" column="34" selection-start-line="69" selection-start-column="34" selection-end-line="69" selection-end-column="34" />
                 </state>
               </provider>
             </entry>
@@ -172,20 +169,20 @@
         <option value="$PROJECT_DIR$/libft/ft_strsplit.c" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/ft_list_coord.c" />
-        <option value="$PROJECT_DIR$/ft_coords.c" />
         <option value="$PROJECT_DIR$/Makefile" />
+        <option value="$PROJECT_DIR$/ft_coords.c" />
         <option value="$PROJECT_DIR$/ft_draw.c" />
         <option value="$PROJECT_DIR$/fdf.h" />
-        <option value="$PROJECT_DIR$/ft_moves.c" />
         <option value="$PROJECT_DIR$/main.c" />
+        <option value="$PROJECT_DIR$/ft_moves.c" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="538" />
-    <option name="y" value="23" />
-    <option name="width" value="1703" />
-    <option name="height" value="1517" />
+    <option name="x" value="106" />
+    <option name="y" value="135" />
+    <option name="width" value="1643" />
+    <option name="height" value="1244" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -199,6 +196,10 @@
             <path>
               <item name="fdf" type="b2602c69:ProjectViewProjectNode" />
               <item name="fdf" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fdf" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
@@ -246,18 +247,20 @@
       <workItem from="1552395646346" duration="11373000" />
       <workItem from="1552483876530" duration="8379000" />
       <workItem from="1552573657461" duration="4350000" />
-      <workItem from="1552657297411" duration="9942000" />
+      <workItem from="1552657297411" duration="10632000" />
+      <workItem from="1552730558594" duration="131000" />
+      <workItem from="1552730844607" duration="10659000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49346000" />
+    <option name="totallyTimeSpent" value="60826000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="538" y="23" width="1703" height="1517" extended-state="0" />
+    <frame x="106" y="135" width="1643" height="1244" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12522577" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15240474" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -300,6 +303,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Makefile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="85" selection-start-line="30" selection-start-column="85" selection-end-line="30" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/libft/ft_atoi_base.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -314,6 +324,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/libft/ft_atoi.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" selection-start-line="15" selection-end-line="21" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1470">
@@ -321,65 +338,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libft/ft_atoi.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="15" selection-start-line="15" selection-end-line="21" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ft_list_coord.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
+        <state relative-caret-position="461">
           <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Makefile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="85" selection-start-line="30" selection-start-column="85" selection-end-line="30" selection-end-column="85" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ft_draw.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="48" column="36" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="36" />
+        <state relative-caret-position="399">
+          <caret line="37" column="9" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ft_coords.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="50" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
+        <state>
+          <caret column="2" selection-start-column="2" selection-end-column="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fdf.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="814">
+        <state relative-caret-position="900">
           <caret line="60" column="5" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1260">
+          <caret line="84" column="18" lean-forward="true" selection-start-line="84" selection-start-column="18" selection-end-line="84" selection-end-column="18" />
           <folding>
-            <element signature="e#94#118#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ft_moves.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="807">
-          <caret line="102" column="18" selection-start-line="102" selection-start-column="18" selection-end-line="102" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="360">
+          <caret line="24" column="9" lean-forward="true" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
         </state>
       </provider>
     </entry>

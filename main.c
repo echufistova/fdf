@@ -37,6 +37,7 @@ int get_map_list(t_map *map, int fd)
             map->list_coord = map->list_coord->next;
 //            printf(" map->list_coord->z %3f\n\n", map->list_coord->z);
         }
+        print_list_coord(map->list_coord);
         printf("\n\n");
 //    map->list_coord->z = ft_atoi(split[0]); // ТУТ ЕЩЕ НУЖНО ДОБАВИТЬ ЦВЕТ
         map->list_coord->flag_eo_line = 1;
@@ -65,30 +66,7 @@ void recount_map_xyz(t_map *map, int key, int num)
                 map->coords[ij.y][ij.x].y += num;
         }
     }
-}
-
-void xyz_in_xy(t_map *map, double angle)
-{
-    t_point ij;
-    t_coord xy0;
-    t_coord xy1;
-
-    ij.y = -1;
-    while (++ij.y < map->size.y)
-    {
-        ij.x = -1;
-        while (++ij.x < map->size.x)
-        {
-            xy0.x = map->coords[ij.y][ij.x].x;
-            xy0.y = map->coords[ij.y][ij.x].y * cos(angle) + map->coords[ij.y][ij.x].z * sin(angle);
-            xy0.z = map->coords[ij.y][ij.x].z * cos(angle) - map->coords[ij.y][ij.x].y * sin(angle);
-            xy1.x = xy0.x * cos(angle) - xy0.z * sin(angle);
-            xy1.y = xy0.y;
-            xy1.z = xy0.z * cos(angle) + xy0.x * sin(angle);
-            map->coords[ij.y][ij.x].x = xy1.x * cos(angle) + xy1.y * sin(angle);
-            map->coords[ij.y][ij.x].y = xy1.y * cos(angle) - xy1.x * sin(angle);
-        }
-    }
+    ft_printf("lol1\n");
 }
 
 void init(t_map *map)
@@ -122,11 +100,15 @@ int main(int ac, char **av)
         return (0);
     //    if (valid_map(map))
     make_coords(&map);
-//    ft_printf("here\n");
-//    ft_printf("here1\n");
-    xyz_in_xy(&map, map.angle);
-//    ft_printf("hello5\n");
+    ft_printf("here\n");
     move_map_to_centre(&map);
+    ft_printf("here2\n");
+    rotate_x(&map, -1);
+    rotate_y(&map, -0.5);
+    rotate_z(&map, 0);
+//    move_map_to_centre(&map);
+//    xyz_in_xy(&map, map.angle);
+    ft_printf("here3\n");
     draw_map(&map);
     mlx_loop(map.mlx);
 //    system("leaks fdf");
