@@ -22,15 +22,16 @@ void move_map_to_centre(t_map *map, int n, int p1, int p2)
 //            ft_printf("coord.x : %d, coord.y: %d\n", coord.x, coord.y);
             if (n == 0)
             {
-                map->coords[ij.y][ij.x].x = coord.x - map->size.x * 5;
-                map->coords[ij.y][ij.x].y = coord.y - map->size.y * 5;
+                map->coords[ij.y][ij.x].x = coord.x - map->size.x * 10;
+                map->coords[ij.y][ij.x].y = coord.y - map->size.y * 10;
                 printf("n: %d, x: %f, y: %f\n", n, map->coords[ij.y][ij.x].x, map->coords[ij.y][ij.x].y);
             }
             if (n == 1)
             {
-                printf("n: %d, x: %f, y: %f\n", n, map->coords[ij.y][ij.x].x, map->coords[ij.y][ij.x].y);
+//                printf("n: %d, x: %f, y: %f\n", n, map->coords[ij.y][ij.x].x, map->coords[ij.y][ij.x].y);
                 map->coords[ij.y][ij.x].x = coord.x + p1;
                 map->coords[ij.y][ij.x].y = coord.y + p2;
+                printf("n: %d, x: %f, y: %f\n", n, map->coords[ij.y][ij.x].x, map->coords[ij.y][ij.x].y);
             }
         }
     }
@@ -124,6 +125,16 @@ void rotatexyz(t_map *map, int key)
     move_map_to_centre(map, 1, -WIN_X / 2, -WIN_Y / 2);
     if (key == 0)
         rotate_z(map, 0.1);
+    else if (key == 2)
+        rotate_z(map, -0.1);
+    else if (key == 13)
+        rotate_y(map, 0.1);
+    else if (key == 1)
+        rotate_y(map, -0.1);
+    else if (key == 6)
+        rotate_x(map, 0.1);
+    else if (key == 8)
+        rotate_x(map, -0.1);
     move_map_to_centre(map, 1, WIN_X / 2, WIN_Y / 2);
     ft_bzero(map->image, 4 * WIN_X * WIN_Y);
     draw_map(map);
@@ -137,7 +148,7 @@ int bonuses(int key, void *map)
     {
         movexy(map, key);
     }
-    else if (key == 0)
+    else if ((key >= 0 && key <=2) || key == 13 || key == 8 || key == 6)
     {
         rotatexyz(map, key);
     }

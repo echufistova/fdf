@@ -66,7 +66,7 @@ void recount_map_xyz(t_map *map, int key, int num)
                 map->coords[ij.y][ij.x].y += num;
         }
     }
-    ft_printf("lol1\n");
+//    ft_printf("lol1\n");
 }
 
 void init(t_map *map)
@@ -103,8 +103,8 @@ int main(int ac, char **av)
     ft_printf("here\n");
     move_map_to_centre(&map, 0, 0, 0);
     ft_printf("here2\n");
-    rotate_x(&map, -1);
-    rotate_y(&map, -0.5);
+    rotate_x(&map, 0);
+    rotate_y(&map, 0);
     rotate_z(&map, 0);
 //    move_map_to_centre(&map);
 //    xyz_in_xy(&map, map.angle);
