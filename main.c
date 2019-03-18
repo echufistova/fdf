@@ -37,7 +37,7 @@ int get_map_list(t_map *map, int fd)
             map->list_coord = map->list_coord->next;
 //            printf(" map->list_coord->z %3f\n\n", map->list_coord->z);
         }
-        print_list_coord(map->list_coord);
+//        print_list_coord(map->list_coord);
         printf("\n\n");
 //    map->list_coord->z = ft_atoi(split[0]); // ТУТ ЕЩЕ НУЖНО ДОБАВИТЬ ЦВЕТ
         map->list_coord->flag_eo_line = 1;
@@ -110,7 +110,9 @@ int main(int ac, char **av)
 //    xyz_in_xy(&map, map.angle);
     ft_printf("here3\n");
     move_map_to_centre(&map, 1, WIN_X / 2, WIN_Y / 2);
+    ft_printf("here4\n");
     draw_map(&map);
+    ft_printf("here5\n");
     mlx_loop(map.mlx);
 //    system("leaks fdf");
     return (0);

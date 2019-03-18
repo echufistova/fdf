@@ -54,6 +54,7 @@ typedef struct s_map
     int bpp;
     int size_line;
     int angle;
+    double zoom;
 }               t_map;
 
 void print_list_coord(t_list_coord *list);

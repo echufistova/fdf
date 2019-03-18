@@ -10,7 +10,7 @@ void move_map_to_centre(t_map *map, int n, int p1, int p2)
     t_coord coord;
 
     ij.y = -1;
-//    ft_printf("map size.x - %d, map size.y %d\n", map->size.x * 10, map->size.y * 10);
+//    ft_printf("map size.x - %d, map size.y %d\n", map->size.x, map->size.y);
     while (++ij.y < map->size.y)
     {
         ij.x = -1;
@@ -24,14 +24,16 @@ void move_map_to_centre(t_map *map, int n, int p1, int p2)
             {
                 map->coords[ij.y][ij.x].x = coord.x - map->size.x * 10;
                 map->coords[ij.y][ij.x].y = coord.y - map->size.y * 10;
-                printf("n: %d, x: %f, y: %f\n", n, map->coords[ij.y][ij.x].x, map->coords[ij.y][ij.x].y);
+//                printf("ij.y %d, ij.x : %d, n: %d, x: %f, y: %f\n", ij.y, ij.x, n,
+//                       map->coords[ij.y][ij.x].x, map->coords[ij.y][ij.x].y);
             }
             if (n == 1)
             {
 //                printf("n: %d, x: %f, y: %f\n", n, map->coords[ij.y][ij.x].x, map->coords[ij.y][ij.x].y);
                 map->coords[ij.y][ij.x].x = coord.x + p1;
                 map->coords[ij.y][ij.x].y = coord.y + p2;
-                printf("n: %d, x: %f, y: %f\n", n, map->coords[ij.y][ij.x].x, map->coords[ij.y][ij.x].y);
+//                printf("ij.y %d, ij.x : %d, n: %d, x: %f, y: %f\n", ij.y, ij.x, n,
+//                        map->coords[ij.y][ij.x].x, map->coords[ij.y][ij.x].y);
             }
         }
     }
@@ -124,17 +126,53 @@ void rotatexyz(t_map *map, int key)
 {
     move_map_to_centre(map, 1, -WIN_X / 2, -WIN_Y / 2);
     if (key == 0)
-        rotate_z(map, 0.1);
-    else if (key == 2)
-        rotate_z(map, -0.1);
-    else if (key == 13)
+    {
         rotate_y(map, 0.1);
-    else if (key == 1)
+    }
+    else if (key == 2)
+    {
         rotate_y(map, -0.1);
-    else if (key == 6)
+    }
+    else if (key == 13)
+    {
         rotate_x(map, 0.1);
-    else if (key == 8)
+    }
+    else if (key == 1)
+    {
         rotate_x(map, -0.1);
+    }
+    else if (key == 6)
+    {
+        rotate_z(map, 0.1);
+    }
+    else if (key == 8)
+    {
+        rotate_z(map, -0.1);
+    }
+    move_map_to_centre(map, 1, WIN_X / 2, WIN_Y / 2);
+    ft_bzero(map->image, 4 * WIN_X * WIN_Y);
+    draw_map(map);
+}
+
+void zoom(t_map *map, int key)
+{
+    int i;
+    int j;
+    double k;
+
+    i = -1;
+    k = (key == 24) ? 1.1 : 0.9;
+    move_map_to_centre(map, 1, -WIN_X / 2, -WIN_Y / 2);
+    while (++i < map->size.y)
+    {
+        j = -1;
+        while (++j < map->size.x)
+        {
+            map->coords[i][j].x *= k;
+            map->coords[i][j].y *= k;
+            map->coords[i][j].z *= k;
+        }
+    }
     move_map_to_centre(map, 1, WIN_X / 2, WIN_Y / 2);
     ft_bzero(map->image, 4 * WIN_X * WIN_Y);
     draw_map(map);
@@ -151,6 +189,10 @@ int bonuses(int key, void *map)
     else if ((key >= 0 && key <=2) || key == 13 || key == 8 || key == 6)
     {
         rotatexyz(map, key);
+    }
+    else if (key == 24 || key == 27)
+    {
+        zoom(map, key);
     }
     return (1);
 }

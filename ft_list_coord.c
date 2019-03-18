@@ -27,7 +27,7 @@ int	ft_getnbr(char *str)
 
 t_list_coord	*ft_list_coord_new(int x, int y, char *line)
 {
-    // char *dop;
+    char *dop;
     t_list_coord *res;
 
     if (!(res = (t_list_coord*)malloc(sizeof(t_list_coord))))
@@ -36,14 +36,16 @@ t_list_coord	*ft_list_coord_new(int x, int y, char *line)
     res->y = y;
     res->z = ft_atoi(line);
     ft_printf("'%s'\n", line);
-    printf("here z %f\n\n", res->z);
-//    if (ft_strchr(line, ','))
-//    {
-//        dop = ft_strchr(line, ',');
-//        res->color = ft_atoi_base(++dop, "10");
-//    }
-    //else
-    res->color = 0;
+    printf("here z %f\n", res->z);
+    if (ft_strchr(line, ','))
+    {
+        dop = ft_strchr(line, ',');
+        ft_printf("dop: '%s'\n", dop);
+        res->color = ft_atoi_base(++dop, "16");
+        ft_printf("color : %d\n\n", res->color);
+    }
+    else
+        res->color = 0;
     res->flag_eo_line = 0;
     res->next = NULL;
     return (res);
