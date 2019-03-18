@@ -111,44 +111,25 @@ void movexy(t_map *map, int key)
         recount_map_xyz(map, 125, 10);
     else if (key == 126)
         recount_map_xyz(map, 126, -10);
-//    else if (key == 0)
-//        rotate_xx(map);
-//    else if (key == 13)
-//    else if (key == 13)
-//    else if (key == 13)
     ft_bzero(map->image, 4 * WIN_X * WIN_Y);
-//    ft_printf("hello1\n");
     draw_map(map);
-//    ft_printf("hello2\n");
 }
 
 void rotatexyz(t_map *map, int key)
 {
     move_map_to_centre(map, 1, -WIN_X / 2, -WIN_Y / 2);
     if (key == 0)
-    {
         rotate_y(map, 0.1);
-    }
     else if (key == 2)
-    {
         rotate_y(map, -0.1);
-    }
     else if (key == 13)
-    {
         rotate_x(map, 0.1);
-    }
     else if (key == 1)
-    {
         rotate_x(map, -0.1);
-    }
     else if (key == 6)
-    {
         rotate_z(map, 0.1);
-    }
     else if (key == 8)
-    {
         rotate_z(map, -0.1);
-    }
     move_map_to_centre(map, 1, WIN_X / 2, WIN_Y / 2);
     ft_bzero(map->image, 4 * WIN_X * WIN_Y);
     draw_map(map);
@@ -183,17 +164,20 @@ int bonuses(int key, void *map)
     if (key == 53)
         exit(1);
     else if (key >= 123 && key <= 126)
-    {
         movexy(map, key);
-    }
     else if ((key >= 0 && key <=2) || key == 13 || key == 8 || key == 6)
-    {
         rotatexyz(map, key);
-    }
     else if (key == 24 || key == 27)
-    {
         zoom(map, key);
-    }
     return (1);
 }
 
+void guide(t_map *map)
+{
+    mlx_string_put(map->mlx, map->window, 10, 25, 0xf5978a, "rotate");
+}
+
+void usage(void)
+{
+    ft_printf("Usage: ./fdf <map_name>\n");
+}

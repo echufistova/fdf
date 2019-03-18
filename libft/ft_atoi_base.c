@@ -4,49 +4,34 @@
 
 #include "libft.h"
 
-static int		ft_isspace(char c)
+int	ft_inbase(char c, int base)
 {
-    if (c == '\n' || c == '\v' || c == '\t' ||
-        c == ' ' || c == '\r' || c == '\f')
-        return (1);
-    return (0);
+    if (base <= 10)
+        return (c >= '0' && c <= '9');
+    return ((c >= '0' && c <= '9') || (c >= 'A' && c <= ('A' + base - 10)));
 }
 
-static int	ft_base_atoi(char c, char *base)
+int	ft_atoi_base(char *str, int base)
 {
-    int		i;
+    int	value;
+    int	sign;
 
-    i = 0;
-    while (base[i])
+    value = 0;
+    if (base <= 1 || base > 36)
+        return (0);
+    while (*str == ' ' || *str == '\t' || *str == '\n' || *str == '\f'
+           || *str == '\r' || *str == '\v')
+        str++;
+    sign = (*str == '-') ? -1 : 1;
+    if (*str == '-' || *str == '+')
+        str++;
+    while (ft_inbase(*str, base))
     {
-        if (base[i] == c)
-            return (i);
-        i++;
+        if (*str - 'A' >= 0)
+            value = value * base + (*str - 'A' + 10);
+        else
+            value = value * base + (*str - '0');
+        str++;
     }
-    return (-1);
-}
-
-int			ft_atoi_base(char *str, char *base)
-{
-    int		res;
-    int		sign;
-    int		i;
-
-    res = 0;
-    sign = 1;
-    i = 0;
-    while ((ft_isspace(str[i]) != '\0'))
-        i++;
-    if (str[i] == '+' || str[i] == '-')
-    {
-        if (str[i] == '-')
-            sign = -1;
-        i++;
-    }
-    while (ft_base_atoi(str[i], base) != -1)
-    {
-        res = res * ft_strlen(base) + ft_base_atoi(str[i], base);
-        i++;
-    }
-    return (res * sign);
+    return (value * sign);
 }

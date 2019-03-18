@@ -28,6 +28,7 @@ void make_coords(t_map *map)
             map->coords[ij.y][ij.x].y = dop->y * 20;
             map->coords[ij.y][ij.x].z = dop->z * 5;
             map->coords[ij.y][ij.x].color = dop->color;
+            ft_printf("clolr %d\n", map->coords[ij.y][ij.x].color);
             if (dop->flag_eo_line != 1)
                 dop = dop->next;
 //            printf("t%10f", map->coords[ij.y][ij.x].z);

@@ -93,12 +93,16 @@ int main(int ac, char **av)
     int fd;
     t_map map;
 
-    if ((fd = open(av[1], O_RDONLY)) < 0)
+    if (ac != 2 || (fd = open(av[1], O_RDONLY)) < 0)
+    {
+        usage();
         return (0);
+    }
     init(&map);
     if (!get_map_list(&map, fd))
         return (0);
     //    if (valid_map(map))
+    guide(&map);
     make_coords(&map);
     ft_printf("here\n");
     move_map_to_centre(&map, 0, 0, 0);
@@ -106,8 +110,6 @@ int main(int ac, char **av)
     rotate_x(&map, 0);
     rotate_y(&map, 0);
     rotate_z(&map, 0);
-//    move_map_to_centre(&map);
-//    xyz_in_xy(&map, map.angle);
     ft_printf("here3\n");
     move_map_to_centre(&map, 1, WIN_X / 2, WIN_Y / 2);
     ft_printf("here4\n");

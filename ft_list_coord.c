@@ -41,8 +41,10 @@ t_list_coord	*ft_list_coord_new(int x, int y, char *line)
     {
         dop = ft_strchr(line, ',');
         ft_printf("dop: '%s'\n", dop);
-        res->color = ft_atoi_base(++dop, "16");
+        ft_printf("%d\n", ft_atoi_base(++dop, 16));
+        res->color = ft_atoi_base(dop, 16);
         ft_printf("color : %d\n\n", res->color);
+        res->color = 5;
     }
     else
         res->color = 0;

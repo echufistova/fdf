@@ -58,7 +58,7 @@ int					ft_isascii(int c);
 int					ft_isalnum(int c);
 int					ft_isprint(int c);
 int					ft_atoi(const char *str);
-int					ft_atoi_base(char *str, char *base);
+int					ft_atoi_base(char *str, int base);
 size_t				ft_strlcat(char *dest, const char *src, size_t dstsize);
 char				*ft_strncat(char *dest, const char *src, size_t n);
 char				*ft_strcat(char *dest, const char *src);

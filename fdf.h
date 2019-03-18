@@ -25,7 +25,7 @@ typedef struct s_coord
     double x;
     double y;
     double z;
-    double color;
+    int color;
 
 }               t_coord;
 
@@ -57,6 +57,8 @@ typedef struct s_map
     double zoom;
 }               t_map;
 
+void usage(void);
+void guide(t_map *map);
 void print_list_coord(t_list_coord *list);
 void			free_list(t_list_coord **dop);
 void draw_net(t_map *map);
@@ -64,7 +66,6 @@ void draw_map(t_map *map);
 void draw_line(t_map *map, t_coord c0, t_coord c1);
 void    make_coords(t_map *map);
 void move_map_to_centre(t_map *map, int n, int p1, int p2);
-void xyz_in_xy(t_map *map, double angle);
 void rotate_x(t_map *map, double angle);
 void rotate_y(t_map *map, double angle);
 void rotate_z(t_map *map, double angle);
@@ -72,4 +73,4 @@ void rotatexyz(t_map *map, int key);
 void recount_map_xyz(t_map *map, int key, int num);
 int bonuses(int key, void *map);
 t_list_coord	*ft_list_coord_new(int x, int y, char *line);
-#endif //FDF_FDF_H
+#endif
