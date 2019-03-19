@@ -6,7 +6,7 @@
 /*   By: ychufist <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/28 17:28:27 by ychufist          #+#    #+#             */
-/*   Updated: 2018/10/12 13:06:46 by ychufist         ###   ########.fr       */
+/*   Updated: 2019/03/19 15:48:04 by ychufist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ void				ft_putstr(char const *s);
 void				ft_putstr_w(wchar_t *w_str);
 void				ft_putendl(char const *s);
 void				ft_putnbr(int n);
-int	ft_getnbr(char *str);
+int					ft_getnbr(char *str);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char const *s, int fd);
 void				ft_putendl_fd(char const *s, int fd);

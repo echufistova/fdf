@@ -16,7 +16,7 @@ LIBFT = ./libft/libftprintf.a
 
 FLAGS = -Wall -Wextra -Werror
 
-SRC = main.c ft_coords.c ft_draw.c ft_moves.c
+SRC = main.c ft_coords.c ft_draw.c ft_moves.c ft_rotate.c
 
 OUT = $(SRC:.c=.o)
 
