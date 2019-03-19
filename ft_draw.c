@@ -21,19 +21,15 @@ void	draw_line(t_map *map, t_coord c0, t_coord c1)
 	if (fabs(c1.y - c0.y) > fabs(c1.x - c0.x))
 	{
 		while (c0.y > c1.y ? xy.y >= c1.y : xy.y <= c1.y &&
-				xy.x + (xy.y * WIN_X) <= WIN_X * WIN_Y) //вставляем по х
+				xy.x + (xy.y * WIN_X) <= WIN_X * WIN_Y)
 		{
-//            ft_printf("luul02\n");
 			xy.x = ((xy.y - c0.y) / (c0.y - c1.y) * (c0.x - c1.x) + c0.x);
-//            if (xy.x >= 0 && xy.x <= WIN_X && xy.y >= 0 && xy.y <= WIN_Y
-//            && map->coords[(int)c0.y][(int)c0.x].color != 0)
-//                map->image[xy.x + (xy.y * WIN_X)] = 0xFF0000;
-//            else
-			if (xy.x >= 0 && xy.x <= WIN_X && xy.y >= 0 && xy.y <= WIN_Y)
+           if (c0.color != 0)
+               map->image[xy.x + (xy.y * WIN_X)] = c0.color;
+           else	if (xy.x >= 0 && xy.x <= WIN_X && xy.y >= 0 && xy.y <= WIN_Y)
 				map->image[xy.x + (xy.y * WIN_X)] = 0x8fcbc;
 			c1.y > c0.y ? xy.y++ : xy.y--;
 		}
-//        printf("here11\n");
 	}
 	else
 	{
@@ -41,22 +37,13 @@ void	draw_line(t_map *map, t_coord c0, t_coord c1)
 				xy.x + (xy.y * WIN_X) <= WIN_X * WIN_Y)
 		{
 			xy.y = ((xy.x - c0.x) / (c0.x - c1.x) * (c0.y - c1.y) + c0.y);
-//            ft_printf("lool2 %d, %d\n", WIN_X * WIN_Y, xy.x + (xy.y * WIN_X));
-//            if (xy.x >= 0 && xy.x <= WIN_X && xy.y >= 0 && xy.y <= WIN_Y && map->coords[(int)c0.y][(int)c0.x].color != 0)
-//            {
-//                ft_printf("lol0\n");
-//                map->image[xy.x + (xy.y * WIN_X)] = 0xFF0000;
-//            }
-//            else
-			if (xy.x >= 0 && xy.x <= WIN_X && xy.y >= 0 && xy.y <= WIN_Y)
-			{
+        if (c0.color != 0)
+               map->image[xy.x + (xy.y * WIN_X)] = c0.color;
+           else	if (xy.x >= 0 && xy.x <= WIN_X && xy.y >= 0 && xy.y <= WIN_Y)
 				map->image[xy.x + (xy.y * WIN_X)] = 0x8fcbc;
-			}
 			c1.x > c0.x ? xy.x++ : xy.x--;
 		}
-//        ft_printf("here13\n");
 	}
-//    ft_printf("here8\n");
 }
 
 void	draw_net(t_map *map)
@@ -85,5 +72,5 @@ void	draw_map(t_map *map)
 	draw_net(map);
 	mlx_put_image_to_window(map->mlx, map->window, map->img, 0, 0);
 	mlx_hook(map->window, 2, 0, bonuses, map);
-//    system("leaks fdf");
+   // system("leaks fdf");
 }

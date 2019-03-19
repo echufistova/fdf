@@ -62,7 +62,8 @@ typedef struct			s_map
 
 void					usage(void);
 void					guide(t_map *map);
-void					print_list_coord(t_list_coord *list);
+void					free_split(char **split, char **line);
+void					free_list(t_list_coord **dop);
 void					draw_net(t_map *map);
 void					draw_map(t_map *map);
 void					draw_line(t_map *map, t_coord c0, t_coord c1);

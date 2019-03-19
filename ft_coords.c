@@ -30,7 +30,6 @@ void			make_coords(t_map *map)
 			map->coords[ij.y][ij.x].y = dop->y * 20;
 			map->coords[ij.y][ij.x].z = dop->z * 5;
 			map->coords[ij.y][ij.x].color = dop->color;
-//            ft_printf("clolr %d\n", map->coords[ij.y][ij.x].color);
 			if (dop->flag_eo_line != 1)
 				dop = dop->next;
 			ij.x++;
@@ -50,13 +49,12 @@ t_list_coord	*ft_list_coord_new(int x, int y, char *line)
 	res->x = x;
 	res->y = y;
 	res->z = ft_getnbr(line);
-	if (ft_strchr(line, ','))
+	if (ft_strstr(line, ",0x"))
 	{
-		dop = ft_strchr(line, ',');
-		ft_printf("%d\n", ft_atoi_base(dop, 16));
+		dop = ft_strstr(line, ",0x");
+		++dop;
+		++dop;
 		res->color = ft_atoi_base(++dop, 16);
-		ft_printf("color : %d\n\n", res->color);
-		res->color = 5;
 	}
 	else
 		res->color = 0;
@@ -65,15 +63,16 @@ t_list_coord	*ft_list_coord_new(int x, int y, char *line)
 	return (res);
 }
 
-void			print_list_coord(t_list_coord *list)
+void free_split(char **split, char **line)
 {
-	t_list_coord *dop;
+	int i;
 
-	dop = list;
-	while (dop)
+	i = 0;
+	while (split[i])
 	{
-		ft_printf("%4d", dop->z);
-		dop = dop->next;
+		ft_strdel(&split[i]);
+		i++;
 	}
-	ft_printf("\n");
+	free(split);
+	free(*line);
 }

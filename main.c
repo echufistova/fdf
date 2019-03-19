@@ -39,17 +39,17 @@ int		get_map_list(t_map *map, int fd)
 		split = ft_strsplit(line, ' ');
 		i = (++row == 0) ? 0 : -1;
 		if (!same_amount_of_coords(map, split, row))
+		{
+			free_split(split, &line);
 			return (0);
+		}
 		while (split[++i])
 		{
 			map->list_coord->next = ft_list_coord_new(i, row, split[i]);
 			map->list_coord = map->list_coord->next;
 		}
 		map->list_coord->flag_eo_line = 1;
-		while (--i >= 0)
-			free(split[i]);
-		free(split);
-		ft_strdel(&line);
+		free_split(split, &line);
 	}
 	map->size.y = row + 1;
 	return (1);
@@ -71,16 +71,16 @@ void	recount_map_xyz(t_map *map, int key, int num)
 				map->coords[ij.y][ij.x].y += num;
 		}
 	}
-//    ft_printf("lol1\n");
 }
 
-void	init(t_map *map)
+void	init(t_map *map, int fd)
 {
-	map->list_coord = (t_list_coord*)malloc(sizeof(t_list_coord));
+	char *line;
+
+	get_next_line(fd, &line);
+	map->list_coord = ft_list_coord_new(0, 0, line);
+	free(line);
 	map->list_coord->next = NULL;
-	map->list_coord->x = 0;
-	map->list_coord->y = 0;
-	map->list_coord->z = 0; //ТУТ НЕ 0
 	map->begin = map->list_coord;
 	map->coords = NULL;
 	map->mlx = mlx_init();
@@ -102,24 +102,21 @@ int		main(int ac, char **av)
 		usage();
 		return (0);
 	}
-	init(&map);
+	init(&map, fd);
 	if (!get_map_list(&map, fd))
+	{
+		system("leaks fdf");
 		return (0);
-	//    if (valid_map(map))
+	}
 	guide(&map);
 	make_coords(&map);
-	ft_printf("here\n");
 	move_map_to_centre(&map, 0, 0, 0);
-	ft_printf("here2\n");
 	rotate_x(&map, 0);
 	rotate_y(&map, 0);
 	rotate_z(&map, 0);
-	ft_printf("here3\n");
 	move_map_to_centre(&map, 1, WIN_X / 2, WIN_Y / 2);
-	ft_printf("here4\n");
 	draw_map(&map);
-	ft_printf("here5\n");
 	mlx_loop(map.mlx);
-//    system("leaks fdf");
+	system("leaks fdf");
 	return (0);
 }
