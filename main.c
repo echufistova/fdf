@@ -31,13 +31,9 @@ int get_map_list(t_map *map, int fd)
             return (0);
         while (split[++i])
         {
-//            ft_printf("hh %d : \n", i);
-//            ft_printf(" split: %s\n", split[i]);
             map->list_coord->next = ft_list_coord_new(i, row, split[i]);
             map->list_coord = map->list_coord->next;
-//            printf(" map->list_coord->z %3f\n\n", map->list_coord->z);
         }
-//        print_list_coord(map->list_coord);
         printf("\n\n");
 //    map->list_coord->z = ft_atoi(split[0]); // ТУТ ЕЩЕ НУЖНО ДОБАВИТЬ ЦВЕТ
         map->list_coord->flag_eo_line = 1;
@@ -78,7 +74,6 @@ void init(t_map *map)
     map->list_coord->z = 0; //ТУТ НЕ 0
     map->begin = map->list_coord;
     map->coords = NULL;
-    map->angle = 15;
     map->mlx = mlx_init();
     map->window = mlx_new_window(map->mlx, WIN_X, WIN_Y, "FDF");
     map->endian = 0;

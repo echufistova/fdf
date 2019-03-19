@@ -32,7 +32,7 @@ SRCLIBA = ft_memset.c ft_bzero.c ft_memcpy.c\
 		ft_cl.c ft_cw.c ft_lstnew.c ft_lstdelone.c\
 		ft_lstdel.c ft_lstadd.c ft_lstiter.c ft_lstmap.c\
 		ft_foreach.c ft_mmap.c ft_sqrt.c ft_intlength.c\
-		ft_atoi_base.c\
+		ft_atoi_base.c ft_getnbr.c\
 		get_next_line.c
 	  
 SRCPRNTF = ft_printf.c \

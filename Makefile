@@ -14,9 +14,9 @@ NAME = fdf
 
 LIBFT = ./libft/libftprintf.a
 
-FLAGS =
+FLAGS = -Wall -Wextra -Werror
 
-SRC = main.c ft_list_coord.c ft_coords.c ft_draw.c ft_moves.c
+SRC = main.c ft_coords.c ft_draw.c ft_moves.c
 
 OUT = $(SRC:.c=.o)
 

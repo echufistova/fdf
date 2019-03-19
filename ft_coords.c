@@ -6,15 +6,10 @@
 
 void make_coords(t_map *map)
 {
-//    int color;
-    int i;
     t_point ij;
-    t_point xy;
     t_list_coord *dop;
 
     ij.y = 0;
-//    ft_printf("nap size y : %d ", map->size.y);
-//    ft_printf("nap size x : %d\n", map->size.x);
     dop = map->begin;
     map->coords = (t_coord**)malloc(sizeof(t_coord*) * map->size.y);
     while (ij.y < map->size.y)
@@ -23,21 +18,58 @@ void make_coords(t_map *map)
         map->coords[ij.y] = (t_coord*)malloc(sizeof(t_coord) * map->size.x);
         while (ij.x < map->size.x)
         {
-//            printf("dop->x: %f\n", dop->x);
             map->coords[ij.y][ij.x].x = dop->x * 20;
             map->coords[ij.y][ij.x].y = dop->y * 20;
             map->coords[ij.y][ij.x].z = dop->z * 5;
             map->coords[ij.y][ij.x].color = dop->color;
-            ft_printf("clolr %d\n", map->coords[ij.y][ij.x].color);
+//            ft_printf("clolr %d\n", map->coords[ij.y][ij.x].color);
             if (dop->flag_eo_line != 1)
                 dop = dop->next;
-//            printf("t%10f", map->coords[ij.y][ij.x].z);
             ij.x++;
         }
         ij.y++;
         dop = dop->next;
         ft_printf("   h\n");
     }
-    dop = map->begin;
-//    free_list(&dop);
+}
+
+t_list_coord	*ft_list_coord_new(int x, int y, char *line)
+{
+    char *dop;
+    t_list_coord *res;
+
+    if (!(res = (t_list_coord*)malloc(sizeof(t_list_coord))))
+        return (NULL);
+    res->x = x;
+    res->y = y;
+    res->z = ft_getnbr(line);
+    ft_printf("'%s'\n", line);
+    printf("here z %f\n", res->z);
+    if (ft_strchr(line, ','))
+    {
+        dop = ft_strchr(line, ',');
+        ft_printf("dop: '%s'\n", dop);
+        ft_printf("%d\n", ft_atoi_base(++dop, 16));
+        res->color = ft_atoi_base(dop, 16);
+        ft_printf("color : %d\n\n", res->color);
+        res->color = 5;
+    }
+    else
+        res->color = 0;
+    res->flag_eo_line = 0;
+    res->next = NULL;
+    return (res);
+}
+
+void print_list_coord(t_list_coord *list)
+{
+    t_list_coord *dop;
+
+    dop = list;
+    while (dop)
+    {
+        ft_printf("%4d", dop->z);
+        dop = dop->next;
+    }
+    ft_printf("\n");
 }

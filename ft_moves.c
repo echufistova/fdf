@@ -10,30 +10,22 @@ void move_map_to_centre(t_map *map, int n, int p1, int p2)
     t_coord coord;
 
     ij.y = -1;
-//    ft_printf("map size.x - %d, map size.y %d\n", map->size.x, map->size.y);
     while (++ij.y < map->size.y)
     {
         ij.x = -1;
         while (++ij.x < map->size.x)
         {
-//            printf("coord.x : %f, coord.y: %f\n", map->coords[ij.y][ij.x].x, map->coords[ij.y][ij.x].y);
             coord.x = map->coords[ij.y][ij.x].x;
             coord.y = map->coords[ij.y][ij.x].y;
-//            ft_printf("coord.x : %d, coord.y: %d\n", coord.x, coord.y);
             if (n == 0)
             {
                 map->coords[ij.y][ij.x].x = coord.x - map->size.x * 10;
                 map->coords[ij.y][ij.x].y = coord.y - map->size.y * 10;
-//                printf("ij.y %d, ij.x : %d, n: %d, x: %f, y: %f\n", ij.y, ij.x, n,
-//                       map->coords[ij.y][ij.x].x, map->coords[ij.y][ij.x].y);
             }
             if (n == 1)
             {
-//                printf("n: %d, x: %f, y: %f\n", n, map->coords[ij.y][ij.x].x, map->coords[ij.y][ij.x].y);
                 map->coords[ij.y][ij.x].x = coord.x + p1;
                 map->coords[ij.y][ij.x].y = coord.y + p2;
-//                printf("ij.y %d, ij.x : %d, n: %d, x: %f, y: %f\n", ij.y, ij.x, n,
-//                        map->coords[ij.y][ij.x].x, map->coords[ij.y][ij.x].y);
             }
         }
     }
