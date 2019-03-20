@@ -12,27 +12,28 @@
 
 #include "fdf.h"
 
+void color(t_map *map, t_point xy, t_coord c0)
+{
+	if (xy.x >= 0 && xy.x <= WIN_X && xy.y >= 0 && xy.y <= WIN_Y)
+		map->image[xy.x + (xy.y * WIN_X)] = (c0.color != 0) ? c0.color :
+			0x8fcbc;
+	
+
+}
+
 void	draw_line(t_map *map, t_coord c0, t_coord c1)
 {
 	t_point	xy;
 
 	xy.x = c0.x;
 	xy.y = c0.y;
-           ft_printf("luul02\n");
-
 	if (fabs(c1.y - c0.y) > fabs(c1.x - c0.x))
 	{
 		while (c0.y > c1.y ? xy.y >= c1.y : xy.y <= c1.y &&
-				xy.x + (xy.y * WIN_X) <= WIN_X * WIN_Y) //вставляем по х
+				xy.x + (xy.y * WIN_X) <= WIN_X * WIN_Y)
 		{
-			ft_printf("luul1\n");
 			xy.x = ((xy.y - c0.y) / (c0.y - c1.y) * (c0.x - c1.x) + c0.x);
-//            if (xy.x >= 0 && xy.x <= WIN_X && xy.y >= 0 && xy.y <= WIN_Y
-//            && map->coords[(int)c0.y][(int)c0.x].color != 0)
-//                map->image[xy.x + (xy.y * WIN_X)] = 0xFF0000;
-//            else
-			if (xy.x >= 0 && xy.x <= WIN_X && xy.y >= 0 && xy.y <= WIN_Y)
-				map->image[xy.x + (xy.y * WIN_X)] = 0x8fcbc;
+        	color(map, xy, c0);
 			c1.y > c0.y ? xy.y++ : xy.y--;
 		}
 	}
@@ -41,23 +42,11 @@ void	draw_line(t_map *map, t_coord c0, t_coord c1)
 		while (c0.x > c1.x ? xy.x >= c1.x : xy.x <= c1.x &&
 				xy.x + (xy.y * WIN_X) <= WIN_X * WIN_Y)
 		{
-			ft_printf("luul2\n");
 			xy.y = ((xy.x - c0.x) / (c0.x - c1.x) * (c0.y - c1.y) + c0.y);
-//            ft_printf("lool2 %d, %d\n", WIN_X * WIN_Y, xy.x + (xy.y * WIN_X));
-//            if (xy.x >= 0 && xy.x <= WIN_X && xy.y >= 0 && xy.y <= WIN_Y && map->coords[(int)c0.y][(int)c0.x].color != 0)
-//            {
-//                ft_printf("lol0\n");
-//                map->image[xy.x + (xy.y * WIN_X)] = 0xFF0000;
-//            }
-//            else
-			if (xy.x >= 0 && xy.x <= WIN_X && xy.y >= 0 && xy.y <= WIN_Y)
-			{
-				map->image[xy.x + (xy.y * WIN_X)] = 0x8fcbc;
-			}
+			color(map, xy, c0);
 			c1.x > c0.x ? xy.x++ : xy.x--;
 		}
 	}
-	ft_printf("luul\n");
 }
 
 void	draw_net(t_map *map)
