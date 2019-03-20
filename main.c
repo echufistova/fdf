@@ -12,6 +12,20 @@
 
 #include "fdf.h"
 
+void free_split(char **split, char *line)
+{
+	int i;
+
+	i = 0;
+	while (split[i])
+	{
+		free(split[i]);
+		i++;
+	}
+	free(split);
+	free(line);
+}
+
 int		same_amount_of_coords(t_map *map, char **split, int row)
 {
 	int i;
@@ -38,20 +52,30 @@ int		get_map_list(t_map *map, int fd)
 	{
 		split = ft_strsplit(line, ' ');
 		i = (++row == 0) ? 0 : -1;
-		if (!same_amount_of_coords(map, split, row))
+		if (!same_amount_of_coords(map, split, row)|| (i == 0 && row == 0 &&
+			!make_color(split[i], &map->list_coord, 0)))
+		{
+			ft_printf("tut blin\n");
+			free_split(split, line);
 			return (0);
-		if (i == 0 && row == 0)
-			make_color(split[i], &map->list_coord, 0);
+		}
 		while (split[++i])
 		{
-			map->list_coord->next = ft_list_coord_new(i, row, split[i]);
+			if ((map->list_coord->next = ft_list_coord_new(i, row, split[i]))
+				== NULL)
+			{
+				ft_printf("tut\n");
+				free_split(split, line);
+				return (0);
+			}
 			map->list_coord = map->list_coord->next;
 		}
 		map->list_coord->flag_eo_line = 1;
-		while (--i >= 0)
-			free(split[i]);
-		free(split);
-		ft_strdel(&line);
+		// while (--i >= 0)
+		// 	free(split[i]);
+		// free(split);
+		ft_printf("tut blin\n");
+		free_split(split, line);
 	}
 	map->size.y = row + 1;
 	return (1);
@@ -73,7 +97,6 @@ void	recount_map_xyz(t_map *map, int key, int num)
 				map->coords[ij.y][ij.x].y += num;
 		}
 	}
-//    ft_printf("lol1\n");
 }
 
 void	init(t_map *map)
@@ -107,7 +130,11 @@ int		main(int ac, char **av)
 	init(&map);
 	ft_printf("kek\n");
 	if (!get_map_list(&map, fd))
+	{
+		   system("leaks fdf");
+		ft_printf("error\n");
 		return (0);
+	}
 	ft_printf("ke111k\n");
 	//    if (valid_map(map))
 	make_coords(&map);

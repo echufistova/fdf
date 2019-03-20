@@ -12,21 +12,38 @@
 
 #include "fdf.h"
 
-void			make_color(char *line, t_list_coord **res, int i)
+int validation(char *line)
 {
 	char *dop;
 
+	dop = line;
+	if (!ft_strstr(line, ",0x"))
+	{
+		while (*dop != '\0' && *dop >= 48 && *dop <= 57)
+			dop++;
+		if (*dop != '\0')
+			return (0);
+	}
+	return (1);
+}
+
+int			make_color(char *line, t_list_coord **res, int i)
+{
+	char *dop;
+	int j;
+
+	j = 0;
 	if (i == 0)
 		(*res)->z = ft_atoi(line);
-	// ft_printf("hello z\n");
 	if (ft_strstr(line, ",0x"))
 	{
-		ft_printf("lol\n");
 		dop = ft_strstr(line, ",0x");
-		dop += 2;
-		ft_printf("%s\n", dop);
-		(*res)->color = ft_atoi_base(++dop, 16);
+		dop += 3;
+		(*res)->color = ft_atoi_base(dop, 16);
 	}
+	if (!validation(line))
+		return (0);
+	return (1);
 }
 
 void			make_coords(t_map *map)
@@ -46,7 +63,6 @@ void			make_coords(t_map *map)
 			map->coords[ij.y][ij.x].x = dop->x * 20;
 			map->coords[ij.y][ij.x].y = dop->y * 20;
 			map->coords[ij.y][ij.x].z = dop->z * 5;
-			ft_printf("%f  ", map->coords[ij.y][ij.x].z);
 			map->coords[ij.y][ij.x].color = dop->color;
 			if (dop->flag_eo_line != 1)
 				dop = dop->next;
@@ -67,7 +83,11 @@ t_list_coord	*ft_list_coord_new(int x, int y, char *line)
 	res->y = y;
 	res->z = ft_getnbr(line);
 	res->color = 0;
-	make_color(line, &res, 1);
+	if (!make_color(line, &res, 1))
+	{
+		free(res);
+		return (NULL);
+	}
 	res->flag_eo_line = 0;
 	res->next = NULL;
 	return (res);

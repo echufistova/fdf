@@ -17,8 +17,6 @@ void color(t_map *map, t_point xy, t_coord c0)
 	if (xy.x >= 0 && xy.x <= WIN_X && xy.y >= 0 && xy.y <= WIN_Y)
 		map->image[xy.x + (xy.y * WIN_X)] = (c0.color != 0) ? c0.color :
 			0x8fcbc;
-	
-
 }
 
 void	draw_line(t_map *map, t_coord c0, t_coord c1)
