@@ -26,7 +26,7 @@ void free_split(char **split, char *line)
 	free(line);
 }
 
-int		same_amount_of_coords(t_map *map, char **split, int row)
+int		same_amount_of_coords(t_map *map, char **split, int row, char *line)
 {
 	int i;
 
@@ -34,47 +34,41 @@ int		same_amount_of_coords(t_map *map, char **split, int row)
 	while (split[i])
 		i++;
 	if (row == 0)
+	{
 		map->size.x = i;
+		make_color(split[0], &map->list_coord, 0);
+	}
 	else if (i != map->size.x)
+	{
+		free_split(split, line);
 		return (0);
+	}
 	return (1);
 }
 
-int		get_map_list(t_map *map, int fd)
+int		get_map_list(t_map *map, int fd, int row)
 {
 	int		i;
 	char	*line;
 	char	**split;
-	int		row;
 
-	row = -1;
 	while (get_next_line(fd, &line) > 0)
 	{
 		split = ft_strsplit(line, ' ');
 		i = (++row == 0) ? 0 : -1;
-		if (!same_amount_of_coords(map, split, row)|| (i == 0 && row == 0 &&
-			!make_color(split[i], &map->list_coord, 0)))
-		{
-			ft_printf("tut blin\n");
-			free_split(split, line);
+		if (!same_amount_of_coords(map, split, row, line))
 			return (0);
-		}
 		while (split[++i])
 		{
 			if ((map->list_coord->next = ft_list_coord_new(i, row, split[i]))
 				== NULL)
 			{
-				ft_printf("tut\n");
 				free_split(split, line);
 				return (0);
 			}
 			map->list_coord = map->list_coord->next;
 		}
 		map->list_coord->flag_eo_line = 1;
-		// while (--i >= 0)
-		// 	free(split[i]);
-		// free(split);
-		ft_printf("tut blin\n");
 		free_split(split, line);
 	}
 	map->size.y = row + 1;
@@ -129,7 +123,7 @@ int		main(int ac, char **av)
 	}
 	init(&map);
 	ft_printf("kek\n");
-	if (!get_map_list(&map, fd))
+	if (!get_map_list(&map, fd, -1))
 	{
 		   system("leaks fdf");
 		ft_printf("error\n");
@@ -150,6 +144,6 @@ int		main(int ac, char **av)
 	draw_map(&map);
 	ft_printf("here5\n");
 	mlx_loop(map.mlx);
-//    system("leaks fdf");
+   system("leaks fdf");
 	return (0);
 }
