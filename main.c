@@ -40,6 +40,8 @@ int		get_map_list(t_map *map, int fd)
 		i = (++row == 0) ? 0 : -1;
 		if (!same_amount_of_coords(map, split, row))
 			return (0);
+		if (i == 0 && row == 0)
+			make_color(split[i], &map->list_coord, 0);
 		while (split[++i])
 		{
 			map->list_coord->next = ft_list_coord_new(i, row, split[i]);
@@ -80,7 +82,7 @@ void	init(t_map *map)
 	map->list_coord->next = NULL;
 	map->list_coord->x = 0;
 	map->list_coord->y = 0;
-	map->list_coord->z = 0; //ТУТ НЕ 0
+	map->list_coord->color = 0;
 	map->begin = map->list_coord;
 	map->coords = NULL;
 	map->mlx = mlx_init();
@@ -103,10 +105,11 @@ int		main(int ac, char **av)
 		return (0);
 	}
 	init(&map);
+	ft_printf("kek\n");
 	if (!get_map_list(&map, fd))
 		return (0);
+	ft_printf("ke111k\n");
 	//    if (valid_map(map))
-	guide(&map);
 	make_coords(&map);
 	ft_printf("here\n");
 	move_map_to_centre(&map, 0, 0, 0);

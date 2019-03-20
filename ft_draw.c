@@ -18,12 +18,14 @@ void	draw_line(t_map *map, t_coord c0, t_coord c1)
 
 	xy.x = c0.x;
 	xy.y = c0.y;
+           ft_printf("luul02\n");
+
 	if (fabs(c1.y - c0.y) > fabs(c1.x - c0.x))
 	{
 		while (c0.y > c1.y ? xy.y >= c1.y : xy.y <= c1.y &&
 				xy.x + (xy.y * WIN_X) <= WIN_X * WIN_Y) //вставляем по х
 		{
-//            ft_printf("luul02\n");
+			ft_printf("luul1\n");
 			xy.x = ((xy.y - c0.y) / (c0.y - c1.y) * (c0.x - c1.x) + c0.x);
 //            if (xy.x >= 0 && xy.x <= WIN_X && xy.y >= 0 && xy.y <= WIN_Y
 //            && map->coords[(int)c0.y][(int)c0.x].color != 0)
@@ -33,13 +35,13 @@ void	draw_line(t_map *map, t_coord c0, t_coord c1)
 				map->image[xy.x + (xy.y * WIN_X)] = 0x8fcbc;
 			c1.y > c0.y ? xy.y++ : xy.y--;
 		}
-//        printf("here11\n");
 	}
 	else
 	{
 		while (c0.x > c1.x ? xy.x >= c1.x : xy.x <= c1.x &&
 				xy.x + (xy.y * WIN_X) <= WIN_X * WIN_Y)
 		{
+			ft_printf("luul2\n");
 			xy.y = ((xy.x - c0.x) / (c0.x - c1.x) * (c0.y - c1.y) + c0.y);
 //            ft_printf("lool2 %d, %d\n", WIN_X * WIN_Y, xy.x + (xy.y * WIN_X));
 //            if (xy.x >= 0 && xy.x <= WIN_X && xy.y >= 0 && xy.y <= WIN_Y && map->coords[(int)c0.y][(int)c0.x].color != 0)
@@ -54,9 +56,8 @@ void	draw_line(t_map *map, t_coord c0, t_coord c1)
 			}
 			c1.x > c0.x ? xy.x++ : xy.x--;
 		}
-//        ft_printf("here13\n");
 	}
-//    ft_printf("here8\n");
+	ft_printf("luul\n");
 }
 
 void	draw_net(t_map *map)

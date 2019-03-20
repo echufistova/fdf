@@ -90,11 +90,6 @@ int		bonuses(int key, void *map)
 	return (1);
 }
 
-void	guide(t_map *map)
-{
-	mlx_string_put(map->mlx, map->window, 10, 25, 0xf5978a, "rotate");
-}
-
 void	usage(void)
 {
 	ft_printf("Usage: ./fdf <map_name>\n");
