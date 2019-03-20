@@ -80,7 +80,10 @@ void	zoom(t_map *map, int key)
 int		bonuses(int key, void *map)
 {
 	if (key == 53)
+	{
+		system("leaks fdf");
 		exit(1);
+	}
 	else if (key >= 123 && key <= 126)
 		movexy(map, key);
 	else if ((key >= 0 && key <= 2) || key == 13 || key == 8 || key == 6)
