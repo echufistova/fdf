@@ -6,13 +6,13 @@
 /*   By: ychufist <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/19 15:03:09 by ychufist          #+#    #+#             */
-/*   Updated: 2019/03/19 15:08:15 by ychufist         ###   ########.fr       */
+/*   Updated: 2019/03/20 16:38:04 by ychufist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-int validation(char *line)
+int				validation(char *line)
 {
 	char *dop;
 
@@ -27,10 +27,10 @@ int validation(char *line)
 	return (1);
 }
 
-int			make_color(char *line, t_list_coord **res, int i)
+int				make_color(char *line, t_list_coord **res, int i)
 {
-	char *dop;
-	int j;
+	char	*dop;
+	int		j;
 
 	j = 0;
 	if (i == 0)
@@ -93,15 +93,16 @@ t_list_coord	*ft_list_coord_new(int x, int y, char *line)
 	return (res);
 }
 
-void			print_list_coord(t_list_coord *list)
+void			free_split(char **split, char *line)
 {
-	t_list_coord *dop;
+	int i;
 
-	dop = list;
-	while (dop)
+	i = 0;
+	while (split[i])
 	{
-		ft_printf("%4d", dop->z);
-		dop = dop->next;
+		free(split[i]);
+		i++;
 	}
-	ft_printf("\n");
+	free(split);
+	free(line);
 }

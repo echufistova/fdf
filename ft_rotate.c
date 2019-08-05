@@ -91,3 +91,16 @@ void	rotatexyz(t_map *map, int key)
 	ft_bzero(map->image, 4 * WIN_X * WIN_Y);
 	draw_map(map);
 }
+
+void	usage(int i)
+{
+	if (i == 0)
+		ft_printf("Usage: ./fdf <map_name>\n");
+	else
+	{
+		ft_printf("               %s\n", "W / S / A / D / Z / C - to rotate");
+		ft_printf("               %s\n", "+ / -   to zoom");
+		ft_printf("               %s\n", "<- / -> / ^ / down - to move");
+		ft_printf("               %s\n", "i - to make it isometric");
+	}
+}

@@ -6,7 +6,7 @@
 /*   By: ychufist <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/19 15:50:36 by ychufist          #+#    #+#             */
-/*   Updated: 2019/03/19 16:11:10 by ychufist         ###   ########.fr       */
+/*   Updated: 2019/03/20 16:33:51 by ychufist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,10 @@ typedef struct			s_map
 	int					endian;
 	int					bpp;
 	int					size_line;
+	int					iso;
 }						t_map;
 
-void					usage(void);
-void					print_list_coord(t_list_coord *list);
+void					usage(int i);
 void					draw_net(t_map *map);
 void					draw_map(t_map *map);
 void					draw_line(t_map *map, t_coord c0, t_coord c1);
@@ -74,5 +74,7 @@ void					rotate_z(t_map *map, double angle);
 void					rotatexyz(t_map *map, int key);
 void					recount_map_xyz(t_map *map, int key, int num);
 int						bonuses(int key, void *map);
+void					free_split(char **split, char *line);
 t_list_coord			*ft_list_coord_new(int x, int y, char *line);
+
 #endif

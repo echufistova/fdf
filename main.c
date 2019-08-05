@@ -12,20 +12,6 @@
 
 #include "fdf.h"
 
-void free_split(char **split, char *line)
-{
-	int i;
-
-	i = 0;
-	while (split[i])
-	{
-		free(split[i]);
-		i++;
-	}
-	free(split);
-	free(line);
-}
-
 int		same_amount_of_coords(t_map *map, char **split, int row, char *line)
 {
 	int i;
@@ -102,6 +88,7 @@ void	init(t_map *map)
 	map->list_coord->color = 0;
 	map->begin = map->list_coord;
 	map->coords = NULL;
+	map->iso = 0;
 	map->mlx = mlx_init();
 	map->window = mlx_new_window(map->mlx, WIN_X, WIN_Y, "FDF");
 	map->endian = 0;
@@ -118,32 +105,24 @@ int		main(int ac, char **av)
 
 	if (ac != 2 || (fd = open(av[1], O_RDONLY)) < 0)
 	{
-		usage();
+		usage(0);
+		ft_printf("\e[31mERROR\e[0m\n");
 		return (0);
 	}
+	usage(1);
 	init(&map);
-	ft_printf("kek\n");
 	if (!get_map_list(&map, fd, -1))
 	{
-		   system("leaks fdf");
-		ft_printf("error\n");
+		ft_printf("\e[31mERROR\e[0m\n");
 		return (0);
 	}
-	ft_printf("ke111k\n");
-	//    if (valid_map(map))
 	make_coords(&map);
-	ft_printf("here\n");
 	move_map_to_centre(&map, 0, 0, 0);
-	ft_printf("here2\n");
 	rotate_x(&map, 0);
 	rotate_y(&map, 0);
 	rotate_z(&map, 0);
-	ft_printf("here3\n");
 	move_map_to_centre(&map, 1, WIN_X / 2, WIN_Y / 2);
-	ft_printf("here4\n");
 	draw_map(&map);
-	ft_printf("here5\n");
 	mlx_loop(map.mlx);
-   system("leaks fdf");
 	return (0);
 }

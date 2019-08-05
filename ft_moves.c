@@ -77,23 +77,46 @@ void	zoom(t_map *map, int key)
 	draw_map(map);
 }
 
+void	iso(t_map *map, int key)
+{
+	int		i;
+	int		j;
+	t_coord	xy;
+
+	i = -1;
+	move_map_to_centre(map, 1, -WIN_X / 2, -WIN_Y / 2);
+	if (map->iso++ == 0)
+	{
+		while (++i < map->size.y)
+		{
+			j = -1;
+			while (++j < map->size.x)
+			{
+				xy.x = map->coords[i][j].x;
+				xy.y = map->coords[i][j].y;
+				map->coords[i][j].x = (xy.x - xy.y) * cos(0.523599);
+				map->coords[i][j].y = -map->coords[i][j].z +
+				(xy.x + xy.y) * sin(0.523599);
+			}
+		}
+		key = 0;
+	}
+	move_map_to_centre(map, 1, WIN_X / 2, WIN_Y / 2);
+	ft_bzero(map->image, 4 * WIN_X * WIN_Y);
+	draw_map(map);
+}
+
 int		bonuses(int key, void *map)
 {
 	if (key == 53)
-	{
-		system("leaks fdf");
 		exit(1);
-	}
 	else if (key >= 123 && key <= 126)
 		movexy(map, key);
 	else if ((key >= 0 && key <= 2) || key == 13 || key == 8 || key == 6)
 		rotatexyz(map, key);
 	else if (key == 24 || key == 27)
 		zoom(map, key);
+	else if (key == 34)
+		iso(map, key);
 	return (1);
-}
-
-void	usage(void)
-{
-	ft_printf("Usage: ./fdf <map_name>\n");
 }
